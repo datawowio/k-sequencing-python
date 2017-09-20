@@ -4,7 +4,6 @@ try:
 except ImportError:
     from distutils.core import setup
 
-
 setup(
     name='k-sequencing',
     version='0.0.1rc',
@@ -14,7 +13,6 @@ setup(
     author_email='info@datawow.io',
     license='MIT',
     packages=['k_sequencing'],
-    # wait for addination seting
     install_requires=['requests'],
     # tests_require=['nose >= 1.3.4', 'mock >= 1.0.1'],
     test_suite='k_sequencing.test'
