@@ -24,6 +24,7 @@ class Requests(object):
         self.headers = self._build_header(headers)
 
     def _build_header(self, headers=None):
+
         if headers is None:
             headers = {}
 
@@ -55,17 +56,19 @@ class Requests(object):
     def create_image_choices(self, params=None):
         """Create new image choices
 
-        Parameters
-        ---------
+        Args:
+            instruction (str): Detail about image.
+            categories (str): The list of choice. sparate by use space.
+            data (str): URL of imagee
+            postback_url (str): URL for callback
+            multiple (bool): Config multiple select
+            postback_method (str): Config HTTP method GET POST PUT PATCH DELETE
+            custom_id (str): Custom ID
+            staff_id (int): assign to staff
 
-        instruction : string
-        categories : array of string
-        data : string
-        postback_url : string
-        multiple : boolean
-        postback_method : string
-        custom_id : string
-        staff_id : integer
+        Returns:
+
+        Raises:
 
         """
         return self._connection(
@@ -77,16 +80,18 @@ class Requests(object):
     def create_image_closed_questions(self, params=None):
         """Create new image
 
-        Parameters
-        ---------
+        Args:
+            instruction (str): Detail about image.
+            data (str): URL of imagee
+            postback_url (str): URL for callback
+            multiple (bool): Config multiple select
+            postback_method (str): Config HTTP method GET POST PUT PATCH DELETE
+            custom_id (str): Custom ID
+            staff_id (int): assign to staff
 
-        instruction : string
-        data : string
-        postback_url : string
-        multiple : boolean
-        postback_method : string
-        custom_id : string
-        staff_id : integer
+        Returns:
+
+        Raises:
 
         """
 
@@ -99,16 +104,18 @@ class Requests(object):
     def create_image_messages(self, params=None):
         """Create image messages
 
-         Parameters
-         ---------
+        Args:
+            instruction (str): Detail about image.
+            data (str): URL of imagee
+            postback_url (str): URL for callback
+            multiple (bool): Config multiple select
+            postback_method (str): Config HTTP method GET POST PUT PATCH DELETE
+            custom_id (str): Custom ID
+            staff_id (int): assign to staff
 
-         instruction : string
-         data : string
-         postback_url : string
-         multiple : boolean
-         postback_method : string
-         custom_id : string
-         staff_id : integer
+        Returns:
+
+        Raises:
 
          """
 
@@ -121,16 +128,18 @@ class Requests(object):
     def create_image_photo_tags(self, params=None):
         """Create new photo tags
 
-        Parameters
-        ---------
+        Args:
+            instruction (str): Detail about image.
+            data (str): URL of imagee
+            postback_url (str): URL for callback
+            multiple (bool): Config multiple select
+            postback_method (str): Config HTTP method GET POST PUT PATCH DELETE
+            custom_id (str): Custom ID
+            staff_id (int): assign to staff
 
-        instruction : string
-        data : string
-        postback_url : string
-        multiple : boolean
-        postback_method : string
-        custom_id : string
-        staff_id : integer
+        Returns:
+
+        Raises:
 
         """
 
@@ -143,11 +152,14 @@ class Requests(object):
     def get_image_choice(self, params=None):
         """Get image messages
 
-         Parameters
-         ---------
+        Args:
+            page (int): Page of data
+            per_page (int): Limit of date per page
 
-         page : integer
-         per_page : integer
+        Returns:
+
+        Raises:
+
 
          """
 
@@ -160,11 +172,13 @@ class Requests(object):
     def get_image_closed_question(self, params=None):
         """Get image messages
 
-         Parameters
-         ---------
+        Args:
+            page (int): Page of data
+            per_page (int): Limit of date per page
 
-         page : integer
-         per_page : integer
+        Returns:
+
+        Raises:
 
          """
 
@@ -177,11 +191,13 @@ class Requests(object):
     def get_image_message(self, params=None):
         """Get image messages
 
-        Parameters
-        ---------
+        Args:
+            page (int): Page of data
+            per_page (int): Limit of date per page
 
-        page : integer
-        per_page : integer
+        Returns:
+
+        Raises:
 
         """
 
@@ -194,11 +210,13 @@ class Requests(object):
     def get_image_photo_tag(self, params=None):
         """Get image messages
 
-        Parameters
-        ---------
+        Args:
+            page (int): Page of data
+            per_page (int): Limit of date per page
 
-         page : integer
-         per_page : integer
+        Returns:
+
+        Raises:
 
         """
 
