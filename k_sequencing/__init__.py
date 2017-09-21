@@ -32,6 +32,7 @@ class Requests(object):
             self.project_key = project_key
 
         self.headers = self._build_header(headers)
+        self.base_api = 'https://kseq.datawow.io/api/'
 
     def _build_header(self, headers=None):
 
@@ -48,7 +49,12 @@ class Requests(object):
 
         session = Session()
 
-        builder = Request(method, url, data=data, headers=headers)
+        builder = Request(
+            method,
+            self.base_api + url,
+            data=data,
+            headers=headers)
+
         prepare = session.prepare_request(builder)
 
         response = session.send(prepare)
@@ -83,7 +89,7 @@ class Requests(object):
         """
         return self._connection(
             method='POST',
-            url='https://kseq.datawow.io/api/images/choices',
+            url='images/choices',
             data=params,
             headers=self.headers)
 
@@ -107,7 +113,7 @@ class Requests(object):
 
         return self._connection(
             method='POST',
-            url='https://kseq.datawow.io/api/images/closed_questions',
+            url='closed_questions',
             data=params,
             headers=self.headers)
 
@@ -131,7 +137,7 @@ class Requests(object):
 
         return self._connection(
             method='POST',
-            url='https://kseq.datawow.io/api/images/messages',
+            url='images/messages',
             data=params,
             headers=self.headers)
 
@@ -155,7 +161,7 @@ class Requests(object):
 
         return self._connection(
             method='POST',
-            url='https://kseq.datawow.io/api/images/photo_tags',
+            url='images/photo_tags',
             data=params,
             headers=self.headers)
 
@@ -175,7 +181,7 @@ class Requests(object):
 
         return self._connection(
             method='GET',
-            url='https://kseq.datawow.io/api/images/choices',
+            url='images/choices',
             data=params,
             headers=self.headers)
 
@@ -194,7 +200,7 @@ class Requests(object):
 
         return self._connection(
             method='GET',
-            url='https://kseq.datawow.io/api/images/closed_question',
+            url='images/closed_question',
             data=params,
             headers=self.headers)
 
@@ -213,7 +219,7 @@ class Requests(object):
 
         return self._connection(
             method='GET',
-            url='https://kseq.datawow.io/api/images/messages',
+            url='images/messages',
             data=params,
             headers=self.headers)
 
@@ -232,6 +238,6 @@ class Requests(object):
 
         return self._connection(
             method='GET',
-            url='https://kseq.datawow.io/api/images/photo_tags',
+            url='images/photo_tags',
             data=params,
             headers=self.headers)
