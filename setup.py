@@ -9,7 +9,7 @@ setup(
     version='0.0.1rc',
     description='k-sequencing client for python user',
     url='https://datawow.io',
-    author='Datawow.id',
+    author='Datawow.io',
     author_email='info@datawow.io',
     license='MIT',
     packages=['k_sequencing'],

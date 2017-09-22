@@ -113,7 +113,7 @@ class Requests(object):
 
         return self._connection(
             method='POST',
-            url='closed_questions',
+            url='images/closed_questions',
             data=params,
             headers=self.headers)
 
