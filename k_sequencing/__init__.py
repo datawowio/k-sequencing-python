@@ -5,10 +5,6 @@ import errors
 import responses
 
 
-def info():
-    print("k-sequencing-python")
-
-
 class Connector(object):
 
     def __init__(self, project_key=None, headers=None):
