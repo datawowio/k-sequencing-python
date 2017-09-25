@@ -199,11 +199,11 @@ class Connector(object):
 
          """
 
-    return self._connection(
-        method='GET',
-        url='images/choice',
-        data=params,
-        headers=self.headers)
+        return self._connection(
+            method='GET',
+            url='images/choice',
+            data=params,
+            headers=self.headers)
 
     def get_image_closed_questions(self, params=None):
         """Get image closed questions
