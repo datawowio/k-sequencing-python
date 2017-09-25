@@ -9,7 +9,7 @@ def info():
     print("k-sequencing-python")
 
 
-class Requests(object):
+class Connector(object):
 
     def __init__(self, project_key=None, headers=None):
         """Create new image choices
@@ -45,7 +45,7 @@ class Requests(object):
 
         return headers
 
-    def _connection(self, method='GET', url=None, data=None, headers=None):
+    def _connection(self, method='GETx', url=None, data=None, headers=None):
 
         session = Session()
 
@@ -94,7 +94,7 @@ class Requests(object):
             headers=self.headers)
 
     def create_image_closed_questions(self, params=None):
-        """Create new image
+        """Create new closed questions
 
         Args:
             instruction (str): Detail about image.
@@ -165,8 +165,8 @@ class Requests(object):
             data=params,
             headers=self.headers)
 
-    def get_image_choice(self, params=None):
-        """Get image messages
+    def get_image_choices(self, params=None):
+        """Get image choices
 
         Args:
             page (int): Page of data
@@ -185,8 +185,8 @@ class Requests(object):
             data=params,
             headers=self.headers)
 
-    def get_image_closed_question(self, params=None):
-        """Get image messages
+    def get_image_closed_questions(self, params=None):
+        """Get image closed questions
 
         Args:
             page (int): Page of data
@@ -200,11 +200,11 @@ class Requests(object):
 
         return self._connection(
             method='GET',
-            url='images/closed_question',
+            url='images/closed_questions',
             data=params,
             headers=self.headers)
 
-    def get_image_message(self, params=None):
+    def get_image_messages(self, params=None):
         """Get image messages
 
         Args:
@@ -223,8 +223,8 @@ class Requests(object):
             data=params,
             headers=self.headers)
 
-    def get_image_photo_tag(self, params=None):
-        """Get image messages
+    def get_image_photo_tags(self, params=None):
+        """Get image photo tags
 
         Args:
             page (int): Page of data

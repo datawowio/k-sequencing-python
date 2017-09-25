@@ -15,7 +15,7 @@ setup(
     packages=['k_sequencing'],
     install_requires=['requests'],
     # tests_require=['nose >= 1.3.4', 'mock >= 1.0.1'],
-    test_suite='k_sequencing.test'
+    test_suite='k_sequencing.test',
     # package_data={'sample': ['package_data.dat']},
     classifiers=[
         'Development Status :: 3 - Alpha',
