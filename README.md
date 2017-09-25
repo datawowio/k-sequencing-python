@@ -25,9 +25,9 @@ Python supports the following Python versions:
 
 ### Create
 ```python
-param = {'instruction': 'face', 'categories': 'cat1 cat2 cat3', 'URL_IMAGE'}
-con = k_sequencing.Connector('PROJECT_KEY')
-result = con.create_image_choices(params=param)
+>>> param = {'instruction': 'face', 'categories': 'cat1 cat2 cat3', 'URL_IMAGE'}
+>>> con = k_sequencing.Connector('PROJECT_KEY')
+>>> result = con.create_image_choices(params=param)
 ```
 
 ### Retrive list of Image choices
@@ -35,13 +35,13 @@ result = con.create_image_choices(params=param)
 You can retrive data by use same object of connector that you have been created with you project key
 
 ```python 
-result = con.get_image_choices()
+>>> result = con.get_image_choices()
 ```
 
 ### Retrive data by ID of image
 
 ```python
-result = con.get_image_choices_id(params={"id": "YOUR IMAGE ID"})
+>>> result = con.get_image_choices_id(params={"id": "YOUR IMAGE ID"})
 ```
 
 
@@ -49,9 +49,9 @@ result = con.get_image_choices_id(params={"id": "YOUR IMAGE ID"})
 
 ### Create
 ```python
-param = {'instruction': 'face', 'categories': 'cat1 cat2 cat3', 'URL_IMAGE'}
-con = k_sequencing.Connector('PROJECT_KEY')
-result = con.create_image_choices(params=param)
+>>> param = {'instruction': 'face', 'categories': 'cat1 cat2 cat3', 'URL_IMAGE'}
+>>> con = k_sequencing.Connector('PROJECT_KEY')
+>>> result = con.create_image_choices(params=param)
 ```
 
 ### Retrive list of data
@@ -59,22 +59,22 @@ result = con.create_image_choices(params=param)
 You can retrive data by use same object of connector that you have been created with you project key
 
 ```python 
-result = con.get_image_choices()
+>>> result = con.get_image_choices()
 ```
 
 ### Retrive data by ID of image
 
 ```python
-result = con.get_image_choices_id(params={"id": "YOUR IMAGE ID"})
+>>> result = con.get_image_choices_id(params={"id": "YOUR IMAGE ID"})
 ```
 
 ## Image closed questions
 
 ### Create
 ```python
-param = {'instruction': 'face', 'data': 'URL_IMAGE'}
-con = k_sequencing.Connector('PROJECT_KEY')
-result = con.create_image_closed_questions(params=param)
+>>> param = {'instruction': 'face', 'data': 'URL_IMAGE'}
+>>> con = k_sequencing.Connector('PROJECT_KEY')
+>>> result = con.create_image_closed_questions(params=param)
 ```
 
 ### Retrive list of data
@@ -82,22 +82,22 @@ result = con.create_image_closed_questions(params=param)
 You can retrive data by use same object of connector that you have been created with you project key
 
 ```python 
-result = con.get_image_closed_questions()
+>>> result = con.get_image_closed_questions()
 ```
 
 ### Retrive data by ID of image
 
 ```python
-result = con.get_image_closed_questions_id(params={"id": "YOUR IMAGE ID"})
+>>> result = con.get_image_closed_questions_id(params={"id": "YOUR IMAGE ID"})
 ```
 
 ## Image message
 
 ### Create
 ```python
-param = {'instruction': 'face', 'data': 'URL_IMAGE'}
-con = k_sequencing.Connector('PROJECT_KEY')
-result = con.create_image_messages(params=param)
+>>> param = {'instruction': 'face', 'data': 'URL_IMAGE'}
+>>> con = k_sequencing.Connector('PROJECT_KEY')
+>>> result = con.create_image_messages(params=param)
 ```
 
 ### Retrive list of Image choices
@@ -105,22 +105,22 @@ result = con.create_image_messages(params=param)
 You can retrive data by use same object of connector that you have been created with you project key
 
 ```python 
-result = con.get_image_messages()
+>>> result = con.get_image_messages()
 ```
 
 ### Retrive data by ID of image
 
 ```python
-result = con.get_image_messages_id(params={"id": "YOUR IMAGE ID"})
+>>> result = con.get_image_messages_id(params={"id": "YOUR IMAGE ID"})
 ```
 
 ## Image Photo tags
 
 ### Create
 ```python
-param = {'instruction': 'face', 'data': 'URL_IMAGE'}
-con = k_sequencing.Connector('PROJECT_KEY')
-result = con.create_image_photo_tags(params=param)
+>>> param = {'instruction': 'face', 'data': 'URL_IMAGE'}
+>>> con = k_sequencing.Connector('PROJECT_KEY')
+>>> result = con.create_image_photo_tags(params=param)
 ```
 
 ### Retrive list of Image choices
@@ -128,11 +128,11 @@ result = con.create_image_photo_tags(params=param)
 You can retrive data by use same object of connector that you have been created with you project key
 
 ```python 
-result = con.get_image_photo_tags()
+>>> result = con.get_image_photo_tags()
 ```
 
 ### Retrive data by ID of image
 
 ```python
-result = con.get_image_photo_tags_id(params={"id": "YOUR IMAGE ID"})
+>>> result = con.get_image_photo_tags_id(params={"id": "YOUR IMAGE ID"})
 ```
