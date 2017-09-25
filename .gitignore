@@ -126,3 +126,11 @@ Session.vim
 *~
 # auto-generated tag files
 tags
+
+
+
+*.pyc
+*.egg
+*.egg-info
+.eggs/
+dist/
