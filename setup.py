@@ -6,7 +6,7 @@ except ImportError:
 
 setup(
     name='k-sequencing',
-    version='0.0.1rc',
+    version='0.0.2rc',
     description='k-sequencing client for python user',
     url='https://datawow.io',
     author='Datawow.io',
@@ -16,11 +16,10 @@ setup(
     install_requires=['requests'],
     test_suite='k_sequencing.test',
     classifiers=[
-        'Development Status :: 3 - Alpha',
-        'Topic :: Software Development :: Libraries :: Python Modules',
-        'License :: OSI Approved :: MIT License',
-        'Programming Language :: Python',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.7',
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+        "Programming Language :: Python",
+        "Programming Language :: Python :: 2",
+        "Programming Language :: Python :: 2.7",
     ]
 )
