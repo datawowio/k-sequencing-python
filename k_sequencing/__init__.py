@@ -185,6 +185,26 @@ class Connector(object):
             data=params,
             headers=self.headers)
 
+    def get_image_choices_id(self, params=None):
+        """Get image choices by ID
+
+        Args:
+            id (int): ID of data
+            custim_id (int): custom ID of data
+
+        Returns:
+
+        Raises:
+
+
+         """
+
+    return self._connection(
+        method='GET',
+        url='images/choice',
+        data=params,
+        headers=self.headers)
+
     def get_image_closed_questions(self, params=None):
         """Get image closed questions
 
@@ -201,6 +221,25 @@ class Connector(object):
         return self._connection(
             method='GET',
             url='images/closed_questions',
+            data=params,
+            headers=self.headers)
+
+    def get_image_closed_questions_id(self, params=None):
+        """Get image closed questions by ID
+
+        Args:
+            id (int): ID of data
+            custom_id (int): custom ID of data
+
+        Returns:
+
+        Raises:
+
+         """
+
+        return self._connection(
+            method='GET',
+            url='images/closed_question',
             data=params,
             headers=self.headers)
 
@@ -223,6 +262,25 @@ class Connector(object):
             data=params,
             headers=self.headers)
 
+    def get_image_messages_id(self, params=None):
+        """Get image messages
+
+        Args:
+            id (int): ID of data
+            custom_id (int): custom ID of data
+
+        Returns:
+
+        Raises:
+
+        """
+
+        return self._connection(
+            method='GET',
+            url='images/message',
+            data=params,
+            headers=self.headers)
+
     def get_image_photo_tags(self, params=None):
         """Get image photo tags
 
@@ -239,5 +297,24 @@ class Connector(object):
         return self._connection(
             method='GET',
             url='images/photo_tags',
+            data=params,
+            headers=self.headers)
+
+    def get_image_photo_tags_id(self, params=None):
+        """Get image photo tags
+
+        Args:
+            id (int): ID of data
+            custom_id (int): custom ID of data
+
+        Returns:
+
+        Raises:
+
+        """
+
+        return self._connection(
+            method='GET',
+            url='images/photo_tag',
             data=params,
             headers=self.headers)
