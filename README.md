@@ -4,7 +4,11 @@
 
 # Installation 
 ```
-pip install k_sequencing or pip2 install k_sequencing
+pip install k-sequencing
+```
+or
+```
+pip2 install k-sequencing
 ```
 
 Python supports the following Python versions:
