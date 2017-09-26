@@ -136,3 +136,23 @@ You can retrive data by use same object of connector that you have been created 
 ```python
 >>> result = con.get_image_photo_tags_id(params={"id": "YOUR IMAGE ID"})
 ```
+
+# Response
+To get response that data has been containt in response class you can call them by 
+```python 
+>>> result.data
+```
+Data it's Dict you can do as you want like a json object other langauage 
+
+to check error or status by calling this 
+
+```python 
+>>> result.error_code # 401
+>>> result.message # Not authenticated
+```
+
+also you can get HTTP success by this
+
+```python 
+>>> result.success_code # 200
+```
