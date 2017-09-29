@@ -41,7 +41,7 @@ class Connector(object):
 
         return headers
 
-    def _connection(self, method='GETx', url=None, data=None, headers=None):
+    def _connection(self, method='GET', url=None, data=None, headers=None):
 
         session = Session()
 
