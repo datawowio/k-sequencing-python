@@ -142,7 +142,7 @@ You can retrive data by use same object of connector that you have been created 
 ```
 
 # Response
-To get response that data has been containt in response class you can call them by 
+To get response that data has been containted in response class you can call them by 
 ```python 
 >>> result.data
 ```
