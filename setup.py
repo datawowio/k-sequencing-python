@@ -6,7 +6,7 @@ except ImportError:
 
 setup(
     name='k-sequencing',
-    version='0.0.4rc',
+    version='0.0.5rc',
     description='k-sequencing client for python user',
     url='https://datawow.io',
     author='Datawow.io',
