@@ -96,7 +96,6 @@ class Connector(object):
             instruction (str): Detail about image.
             data (str): URL of imagee
             postback_url (str): URL for callback
-            multiple (bool): Config multiple select
             postback_method (str): Config HTTP method GET POST PUT PATCH DELETE
             custom_id (str): Custom ID
             staff_id (int): assign to staff
@@ -120,7 +119,6 @@ class Connector(object):
             instruction (str): Detail about image.
             data (str): URL of imagee
             postback_url (str): URL for callback
-            multiple (bool): Config multiple select
             postback_method (str): Config HTTP method GET POST PUT PATCH DELETE
             custom_id (str): Custom ID
             staff_id (int): assign to staff
@@ -144,7 +142,6 @@ class Connector(object):
             instruction (str): Detail about image.
             data (str): URL of imagee
             postback_url (str): URL for callback
-            multiple (bool): Config multiple select
             postback_method (str): Config HTTP method GET POST PUT PATCH DELETE
             custom_id (str): Custom ID
             staff_id (int): assign to staff
@@ -158,6 +155,27 @@ class Connector(object):
         return self._connection(
             method='POST',
             url='images/photo_tags',
+            data=params,
+            headers=self.headers)
+
+    def create_prediction(self, params=None):
+        """Create new photo tags
+
+        Args:
+            data (str): URL of imagee
+            postback_url (str): URL for callback
+            postback_method (str): Config HTTP method GET POST PUT PATCH DELETE
+            custom_id (str): Custom ID
+
+        Returns:
+
+        Raises:
+
+        """
+
+        return self._connection(
+            method='POST',
+            url='prime/predictions',
             data=params,
             headers=self.headers)
 
@@ -314,3 +332,43 @@ class Connector(object):
             url='images/photo_tag',
             data=params,
             headers=self.headers)
+
+
+    def get_prediction(self, params=None):
+        """Get prediction
+
+        Args:
+            page (int): Page of data
+            per_page (int): Limit of date per page
+
+        Returns:
+
+        Raises:
+
+         """
+
+        return self._connection(
+            method='GET',
+            url='prime/predictions',
+            data=params,
+            headers=self.headers)
+
+    def get_prediction_id(self, params=None):
+        """Get preidciton by ID
+
+        Args:
+            id (int): ID of data
+
+        Returns:
+
+        Raises:
+
+         """
+
+        return self._connection(
+            method='GET',
+            url='prime/predictions/' + params['id'],
+            data=params,
+            headers=self.headers)
+
+
