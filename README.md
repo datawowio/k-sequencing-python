@@ -44,9 +44,9 @@ Python supports the following Python versions:
 | custom_id	     | string      |   No |Custom's id|
 | allow_empty	     | boolean      |   No |Allow sent answer with empty choice. default is `false`|
 
-### Retrive list of Image choices
+### Retrieve list of Image choices
 
-You can retrive data by use same object of connector that you have been created with you project key
+You can retrieve data by use same object of connector that you have been created with you project key
 
 ```python 
 >>> result = con.get_image_choices()
@@ -57,7 +57,7 @@ You can retrive data by use same object of connector that you have been created 
 | page     | 	interger | No | default 0|
 | per_page 	     | string      | No | default 20 |
 
-### Retrive data by ID of image
+### Retrieve data by ID of image
 
 ```python
 >>> result = con.get_image_by_id("YOUR IMAGE ID")
@@ -140,7 +140,7 @@ You can retrieve data by use same object of connector that you have been created
 | page     | 	interger | No | default 0|
 | per_page 	     | string      | No | default 20 |
 
-### Retrive data by ID of image
+### Retrieve data by ID of image
 
 ```python
 >>> result = con.get_image_by_id("YOUR IMAGE ID")
@@ -171,7 +171,7 @@ You can retrieve data by use same object of connector that you have been created
 
 ### Retrieve list of photo tag
 
-You can retrive data by use same object of connector that you have been created with you project key
+You can retrieve data by use same object of connector that you have been created with you project key
 
 ```python 
 >>> result = con.get_image_photo_tags()
@@ -222,7 +222,7 @@ Images (AI Beta / 95% accuracy)
 
 ### Retrieve list of photo tag
 
-You can retrive data by use same object of connector that you have been created with you project key
+You can retrieve data by use same object of connector that you have been created with you project key
 
 ```python 
 >>> result = con.get_prediction()
@@ -255,13 +255,13 @@ There are a difference type of response AI module here is a compare response of 
 
 
 # Response
-To get response that data has been containted in response class you can call them by 
+To get response that data has been contained in response class you can call them by name for example
 ```python 
 >>> result.data
 ```
-Data it's Dict you can do as you want like a json object other langauage 
+Data it's Dict you can do as you want like a JSON object
 
-to check error or status by calling this 
+For check error or status by calling this 
 
 ```python 
 >>> result.error_code # 401
@@ -272,24 +272,4 @@ also you can get HTTP success by this
 
 ```python 
 >>> result.success_code # 200
-```
-
-full response 
-```
-{ 'data': { 'allow_empty': False,
-            'answer': [],
-            'categories': ['face', 'ear'],
-            'credit_charged': 0,
-            'custom_id': None,
-            'data': 'image_url',
-            'id': '5a54735a60f4f17a353d310a',
-            'instruction': 'face',
-            'multiple': False,
-            'postback_url': 'www.url/callbacks',
-            'processed_at': None,
-            'project_id': 82,
-            'status': 'unprocess'},
-  'error_code': None,
-  'message': u'success',
-  'success_code': 201}
 ```
