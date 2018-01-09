@@ -24,15 +24,25 @@ Python supports the following Python versions:
 >>> import k_sequencing
 ```
 
-
-## Image Choices
-
+## Choices
+[Yes or No Question from Image (30 mins response time)]
 ### Create
 ```python
 >>> param = {'instruction': 'face', 'categories': 'cat1 cat2 cat3', 'URL_IMAGE'}
 >>> con = k_sequencing.Connector('PROJECT_KEY')
 >>> result = con.create_image_choices(params=param)
 ```
+##### params 
+|Field        | Type           | Required  | Description |
+| ------------- |:-------------:| :-----:| :-----|
+| instruction	     | string      |   Yes | Image instruction|
+|categories | Array[string]     |    Yes | Categories of answers |
+| data     | 	string | Yes |Data for attachment|
+| postback_url	     | string      |  No | Image postback url|
+|multiple | boolean   |    No | true for multiple answer and false for one answer |
+| postback_method     | 	string | No |Postback method|
+| custom_id	     | string      |   No |Custom's id|
+| allow_empty	     | boolean      |   No |Allow sent answer with empty choice. default is `false`|
 
 ### Retrive list of Image choices
 
@@ -41,38 +51,26 @@ You can retrive data by use same object of connector that you have been created 
 ```python 
 >>> result = con.get_image_choices()
 ```
+##### params
+| Field        | Type           | Required  | Description |
+| ------------- |:-------------:| :-----:| :-----|
+| page     | 	interger | No | default 0|
+| per_page 	     | string      | No | default 20 |
 
 ### Retrive data by ID of image
 
 ```python
->>> result = con.get_image_choices_id(params={"id": "YOUR IMAGE ID"})
+>>> result = con.get_image_by_id("YOUR IMAGE ID")
 ```
+##### params
+| Field        | Type           | Required  | Description |
+| ------------- |:-------------:| :----:| :-----|
+| id	     | string  |   No | Image id|
+|custom_id | string |    No | Client's image id |
 
 
-## Image choices
-
-### Create
-```python
->>> param = {'instruction': 'face', 'categories': 'cat1 cat2 cat3', 'URL_IMAGE'}
->>> con = k_sequencing.Connector('PROJECT_KEY')
->>> result = con.create_image_choices(params=param)
-```
-
-### Retrive list of data
-
-You can retrive data by use same object of connector that you have been created with you project key
-
-```python 
->>> result = con.get_image_choices()
-```
-
-### Retrive data by ID of image
-
-```python
->>> result = con.get_image_choices_id(params={"id": "YOUR IMAGE ID"})
-```
-
-## Image closed questions
+## closed questions
+[Standard Criteria (5 mins response time)]
 
 ### Create
 ```python
@@ -80,22 +78,38 @@ You can retrive data by use same object of connector that you have been created 
 >>> con = k_sequencing.Connector('PROJECT_KEY')
 >>> result = con.create_image_closed_questions(params=param)
 ```
+##### params
+| Field        | Type           | Required  | Description |
+| ------------- |:-------------:| :-----:| :-----|
+| data     | 	string | Yes |Data for moderate|
+| postback_url	     | string      | No | Image postback url|
+| postback_method     | 	string | No |Postback method|
+| custom_id	     | string      |   No |Custom's id|
+### Retrieve list of data
 
-### Retrive list of data
-
-You can retrive data by use same object of connector that you have been created with you project key
+You can retrieve data by use same object of connector that you have been created with you project key
 
 ```python 
 >>> result = con.get_image_closed_questions()
 ```
-
-### Retrive data by ID of image
+##### params
+| Field        | Type           | Required  | Description |
+| ------------- |:-------------:| :-----:| :-----|
+| page     | 	interger | No | default 0|
+| per_page 	     | string      | No | default 20 |
+### Retrieve data by ID of image
 
 ```python
->>> result = con.get_image_closed_questions_id(params={"id": "YOUR IMAGE ID"})
+>>> result = con.get_image_by_id("YOUR IMAGE ID")
 ```
+##### params
+| Field        | Type           | Required  | Description |
+| ------------- |:-------------:| :----:| :-----|
+| id	     | string      |   No | Image id|
+| custom_id | string     |    No | Client's image id |
 
-## Image message
+## Image messages
+[Message Question from Image (30 mins response time)]
 
 ### Create
 ```python
@@ -104,21 +118,41 @@ You can retrive data by use same object of connector that you have been created 
 >>> result = con.create_image_messages(params=param)
 ```
 
-### Retrive list of Image choices
+##### params
+| Field        | Type           | Required  | Description |
+| ------------- |:-------------:| :-----:| :-----|
+| instruction	     | string      |   Yes | Image instruction|
+| data     | 	string | Yes |Data for attachment|
+| postback_url	     | string      | No | Image postback url|
+| postback_method     | 	string | No |Postback method|
+| custom_id	     | string      |   No |Custom's id|
 
-You can retrive data by use same object of connector that you have been created with you project key
+### Retrieve list of Image messages
+
+You can retrieve data by use same object of connector that you have been created with you project key
 
 ```python 
 >>> result = con.get_image_messages()
 ```
+##### params
+| Field        | Type           | Required  | Description |
+| ------------- |:-------------:| :-----:| :-----|
+| page     | 	interger | No | default 0|
+| per_page 	     | string      | No | default 20 |
 
 ### Retrive data by ID of image
 
 ```python
->>> result = con.get_image_messages_id(params={"id": "YOUR IMAGE ID"})
+>>> result = con.get_image_by_id("YOUR IMAGE ID")
 ```
+##### params
+| Field        | Type           | Required  | Description |
+| ------------- |:-------------:| :----:| :-----|
+| id	     | string      |   No | Image id|
+|custom_id | string     |    No | Client's image id |
 
-## Image Photo tags
+## Photo tags
+[Tag an object in the image (60 mins response time)]
 
 ### Create
 ```python
@@ -126,20 +160,40 @@ You can retrive data by use same object of connector that you have been created 
 >>> con = k_sequencing.Connector('PROJECT_KEY')
 >>> result = con.create_image_photo_tags(params=param)
 ```
+##### params
+| Field        | Type           | Required  | Description |
+| ------------- |:-------------:| :-----:| :-----|
+| instruction	     | string      |   Yes | Image instruction|
+| data     | 	string | Yes |Data for attachment|
+| postback_url	     | string      | No | Image postback url|
+| postback_method     | 	string | No |Postback method|
+| custom_id	     | string      |   No |Custom's id|
 
-### Retrive list of Image choices
+### Retrieve list of photo tag
 
 You can retrive data by use same object of connector that you have been created with you project key
 
 ```python 
 >>> result = con.get_image_photo_tags()
 ```
+##### params
+| Field        | Type           | Required  | Description |
+| ------------- |:-------------:| :-----:| :-----|
+| page     | 	interger | No | default 0|
+| per_page 	     | string      | No | default 20 |
 
-### Retrive data by ID of image
-
+### Retrieve data by ID
+all module of images is use same function to retrieve data with ID  
 ```python
->>> result = con.get_image_photo_tags_id(params={"id": "YOUR IMAGE ID"})
+>>> result = con.get_image_by_id("YOUR IMAGE ID")
 ```
+##### params
+| Field        | Type           | Required  | Description |
+| ------------- |:-------------:| :----:| :-----|
+| id	     | string      |   No | Image id|
+|custom_id | string     |    No | Client's image id |
+
+
 
 # Response
 To get response that data has been containted in response class you can call them by 
@@ -159,4 +213,24 @@ also you can get HTTP success by this
 
 ```python 
 >>> result.success_code # 200
+```
+
+full response 
+```
+{ 'data': { 'allow_empty': False,
+            'answer': [],
+            'categories': ['face', 'ear'],
+            'credit_charged': 0,
+            'custom_id': None,
+            'data': 'image_url',
+            'id': '5a54735a60f4f17a353d310a',
+            'instruction': 'face',
+            'multiple': False,
+            'postback_url': 'www.url/callbacks',
+            'processed_at': None,
+            'project_id': 82,
+            'status': 'unprocess'},
+  'error_code': None,
+  'message': u'success',
+  'success_code': 201}
 ```
