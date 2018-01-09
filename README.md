@@ -69,7 +69,7 @@ You can retrive data by use same object of connector that you have been created 
 |custom_id | string |    No | Client's image id |
 
 
-## closed questions
+## Closed questions
 [Standard Criteria (5 mins response time)]
 
 ### Create
@@ -192,6 +192,65 @@ all module of images is use same function to retrieve data with ID
 | ------------- |:-------------:| :----:| :-----|
 | id	     | string      |   No | Image id|
 |custom_id | string     |    No | Client's image id |
+
+
+
+
+
+
+## Prediction
+Images (AI Beta / 95% accuracy)
+
+- [nanameue] Standard Criteria (~1 min)
+- [sexual] Nudity/Sexual (~1 min)
+- [demographic] Demographic (~3 mins)
+- [ai_human] Standard Criteria & Human
+
+### Create
+```python
+>>> param = {'instruction': 'face', 'data': 'URL_IMAGE'}
+>>> con = k_sequencing.Connector('PROJECT_KEY')
+>>> result = con.create_preditcion(params=param)
+```
+##### params
+| Field        | Type           | Required  | Description |
+| ------------- |:-------------:| :-----:| :-----|
+| data     | 	string | Yes |Data for attachment|
+| postback_url	     | string      | No | Image postback url|
+| postback_method     | 	string | No |Postback method|
+| custom_id	     | string      |   No |Custom's id|
+
+### Retrieve list of photo tag
+
+You can retrive data by use same object of connector that you have been created with you project key
+
+```python 
+>>> result = con.get_prediction()
+```
+##### params
+| Field        | Type           | Required  | Description |
+| ------------- |:-------------:| :-----:| :-----|
+| page     | 	interger | No | default 0|
+| per_page 	     | string      | No | default 20 |
+
+### Retrieve data by ID
+all module of images is use same function to retrieve data with ID  
+```python
+>>> result = con.get_image_by_id("YOUR IMAGE ID")
+```
+##### params
+| Field        | Type           | Required  | Description |
+| ------------- |:-------------:| :----:| :-----|
+| id	     | string      |   No | Image id|
+|custom_id | string     |    No | Client's image id |
+
+There are a difference type of response AI module here is a compare response of each type
+#### [nanameue] Standard Criteria (~1 min)
+#### [sexual] Nudity/Sexual (~1 min)
+#### [demographic] Demographic (~3 mins)
+#### [ai_human] Standard Criteria & Human
+
+
 
 
 
