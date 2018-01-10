@@ -65,6 +65,27 @@ class Connector(object):
                                        .get('message'), data=response.json()
                                        .get('data'))
 
+    """ ----- get by id  metohd ----- """
+    def get_image_by_id(self, image_id=None):
+        """Get image by ID 
+
+        Args:
+            id (int): ID of data
+            custom_id (int): custom ID of data
+
+        Returns:
+
+        Raises:
+
+        """
+
+        return self._connection(
+            method='GET',
+            url='projects/images/' + image_id,
+            data=None,
+            headers=self.headers)
+
+    """ ----- create metohd ----- """
     def create_image_choices(self, params=None):
         """Create new image choices
 
@@ -179,6 +200,7 @@ class Connector(object):
             data=params,
             headers=self.headers)
 
+    """ ----- get metohd ----- """
     def get_image_choices(self, params=None):
         """Get image choices
 
@@ -196,26 +218,6 @@ class Connector(object):
         return self._connection(
             method='GET',
             url='images/choices',
-            data=params,
-            headers=self.headers)
-
-    def get_image_choices_id(self, params=None):
-        """Get image choices by ID
-
-        Args:
-            id (int): ID of data
-            custim_id (int): custom ID of data
-
-        Returns:
-
-        Raises:
-
-
-         """
-
-        return self._connection(
-            method='GET',
-            url='images/choice',
             data=params,
             headers=self.headers)
 
@@ -238,25 +240,6 @@ class Connector(object):
             data=params,
             headers=self.headers)
 
-    def get_image_closed_questions_id(self, params=None):
-        """Get image closed questions by ID
-
-        Args:
-            id (int): ID of data
-            custom_id (int): custom ID of data
-
-        Returns:
-
-        Raises:
-
-         """
-
-        return self._connection(
-            method='GET',
-            url='images/closed_question',
-            data=params,
-            headers=self.headers)
-
     def get_image_messages(self, params=None):
         """Get image messages
 
@@ -273,25 +256,6 @@ class Connector(object):
         return self._connection(
             method='GET',
             url='images/messages',
-            data=params,
-            headers=self.headers)
-
-    def get_image_messages_id(self, params=None):
-        """Get image messages
-
-        Args:
-            id (int): ID of data
-            custom_id (int): custom ID of data
-
-        Returns:
-
-        Raises:
-
-        """
-
-        return self._connection(
-            method='GET',
-            url='images/message',
             data=params,
             headers=self.headers)
 
@@ -314,26 +278,6 @@ class Connector(object):
             data=params,
             headers=self.headers)
 
-    def get_image_photo_tags_id(self, params=None):
-        """Get image photo tags
-
-        Args:
-            id (int): ID of data
-            custom_id (int): custom ID of data
-
-        Returns:
-
-        Raises:
-
-        """
-
-        return self._connection(
-            method='GET',
-            url='images/photo_tag',
-            data=params,
-            headers=self.headers)
-
-
     def get_prediction(self, params=None):
         """Get prediction
 
@@ -352,23 +296,3 @@ class Connector(object):
             url='prime/predictions',
             data=params,
             headers=self.headers)
-
-    def get_prediction_id(self, params=None):
-        """Get preidciton by ID
-
-        Args:
-            id (int): ID of data
-
-        Returns:
-
-        Raises:
-
-         """
-
-        return self._connection(
-            method='GET',
-            url='prime/predictions/' + params['id'],
-            data=params,
-            headers=self.headers)
-
-
