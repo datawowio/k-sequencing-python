@@ -28,8 +28,7 @@ class Connector(object):
             self.project_key = project_key
 
         self.headers = self._build_header(headers)
-        # self.base_api = 'https://k-sequencing.datawow.io/api/'
-        self.base_api = 'https://kseq.datawow.io/api/'
+        self.base_api = 'https://k-sequencing.datawow.io/api/'
 
     def _build_header(self, headers=None):
 
