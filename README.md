@@ -460,10 +460,10 @@ all module of images is use same function to retrieve data with ID
 ## Prediction
 [Images (AI Beta)]
 
-- [nanameue] Standard Criteria
-- [sexual] Nudity/Sexual
-- [demographic] Demographic
-- [ai_human] Standard Criteria & Human
+- Standard Criteria
+- Nudity/Sexual
+- Demographic
+- Standard Criteria & Human
 
 ### Create
 ```python
@@ -566,7 +566,7 @@ all module of images is use same function to retrieve data with ID
 
 ### Response of each type AI
 There are a difference type of response AI module here is a compare response of each
-#### [nanameue] Standard Criteria
+#### Standard Criteria
 
 ###### response 
 ```
@@ -584,7 +584,7 @@ There are a difference type of response AI module here is a compare response of 
   'message': u'success',
   'meta': { u'code': 200, u'message': u'success'}}
 ```
-#### [sexual] Nudity/Sexual
+#### Nudity/Sexual
 ###### response 
 ```
 { 'code': 200,
@@ -601,7 +601,7 @@ There are a difference type of response AI module here is a compare response of 
   'message': u'success',
   'meta': { u'code': 200, u'message': u'success'}}
 ```
-#### [demographic] Demographic
+#### Demographic
 ###### response 
 ```
 { 'code': 200,
@@ -631,7 +631,7 @@ There are a difference type of response AI module here is a compare response of 
   'message': u'success',
   'meta': { u'code': 200, u'message': u'success'}}
 ```
-#### [ai_human] Standard Criteria & Human
+#### Standard Criteria & Human
 ###### response 
 ```
 { 'code': 200,
