@@ -70,7 +70,7 @@ class Connector(object):
 
     """ ----- get by id  metohd ----- """
     def get_image_by_id(self, image_id=None):
-        """Get image by ID 
+        """Get image by ID
 
         Args:
             id (int): ID of data

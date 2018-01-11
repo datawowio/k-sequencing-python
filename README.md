@@ -479,8 +479,24 @@ all module of images is use same function to retrieve data with ID
 | postback_method     | 	string | No |Postback method|
 | custom_id	     | string      |   No |Custom's id|
 
-### Retrieve list of prediction
+##### response 
+```
+{ 'code': 200,
+  'data': { u'answer': None,
+            u'credit_charged': 0,
+            u'custom_id': None,
+            u'data': u'[image URL]',
+            u'id': u'5a57144660f4f17a353d313d',
+            u'postback_url': u'[your callback URL]',
+            u'processed_at': None,
+            u'project_id': 87,
+            u'status': u'processing'},
+  'error_code': None,
+  'message': u'success',
+  'meta': { u'code': 200, u'message': u'success'}}
+```
 
+### Retrieve list of prediction
 You can retrieve data by use same object of connector that you have been created with you project key
 
 ```python 
@@ -493,10 +509,30 @@ You can retrieve data by use same object of connector that you have been created
 | per_page 	     | string      | No | default 20 |
 
 
-
-
-
-
+##### response 
+```
+{ 'code': 200,
+  'data': { u'images': [ { u'answer': None,
+                           u'credit_charged': 0,
+                           u'custom_id': None,
+                           u'data': u'[image URL]',
+                           u'id': u'5a57144660f4f17a353d313d',
+                           u'postback_url': u'[your callback URL]',
+                           u'processed_at': None,
+                           u'project_id': 87,
+                           u'status': u'processing'},
+                           {...},
+						   {...}]},
+  'error_code': None,
+  'message': u'success',
+  'meta': { u'code': 200,
+            u'current_page': 1,
+            u'message': u'success',
+            u'next_page': -1,
+            u'prev_page': -1,
+            u'total_count': 2,
+            u'total_pages': 1}}
+```
 
 ### Retrieve data by ID
 all module of images is use same function to retrieve data with ID  
@@ -509,6 +545,26 @@ all module of images is use same function to retrieve data with ID
 | id	     | string      |   No | Image id|
 |custom_id | string     |    No | Client's image id |
 
+
+##### response 
+
+```
+{ 'code': 200,
+  'data': { u'image': { u'answer': None,
+                        u'credit_charged': 0,
+                        u'custom_id': None,
+                        u'data': u'[image URL]',
+                        u'id': u'5a57144660f4f17a353d313d',
+                        u'postback_url': u'[your callback URL]',
+                        u'processed_at': None,
+                        u'project_id': 87,
+                        u'status': u'processing'}},
+  'error_code': None,
+  'message': u'success',
+  'meta': { u'code': 200, u'message': u'success'}}
+```
+
+### Response of each type AI
 There are a difference type of response AI module here is a compare response of each
 #### [nanameue] Standard Criteria
 
