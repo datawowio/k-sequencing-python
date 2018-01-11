@@ -59,15 +59,17 @@ class Connector(object):
             return responses.Responses(error_code=response.status_code,
                                        message=response.json())
         else:
-            return responses.Responses(success_code=response.status_code,
+            return responses.Responses(code=response.json()
+                                       .get('meta').get('code'),
                                        message=response.json()
-                                       .get('meta')
-                                       .get('message'), data=response.json()
+                                       .get('meta').get('message'),
+                                       meta=response.json().get('meta'),
+                                       data=response.json()
                                        .get('data'))
 
     """ ----- get by id  metohd ----- """
     def get_image_by_id(self, image_id=None):
-        """Get image by ID 
+        """Get image by ID
 
         Args:
             id (int): ID of data

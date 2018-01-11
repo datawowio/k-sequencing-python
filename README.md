@@ -1,6 +1,6 @@
 # k-sequencing-python
-3rd for k-sequencing in python version 
-
+k-sequencing-python is rest library for python version. 
+###### support or question support@datawow.io
 
 # Installation 
 ```
@@ -25,7 +25,7 @@ Python supports the following Python versions:
 ```
 
 ## Choices
-[Yes or No Question from Image (30 mins response time)]
+[Yes or No Question from Image]
 ### Create
 ```python
 >>> param = {'instruction': 'face', 'categories': 'cat1 cat2 cat3', 'URL_IMAGE'}
@@ -44,6 +44,27 @@ Python supports the following Python versions:
 | custom_id	     | string      |   No |Custom's id|
 | allow_empty	     | boolean      |   No |Allow sent answer with empty choice. default is `false`|
 
+##### response 
+```
+{ 'code': 200,
+  'data': { u'allow_empty': False,
+            u'answer': [],
+            u'categories': [u'face,', u'eye'],
+            u'credit_charged': 0,
+            u'custom_id': None,
+            u'data': u'[image URL]',
+            u'id': u'5a56c56f60f4f17a353d3113',
+            u'instruction': u'face',
+            u'multiple': False,
+            u'postback_url': u'',[your url]
+            u'processed_at': None,
+            u'project_id': 82,
+            u'status': u'unprocess'},
+  'error_code': None,
+  'message': u'success',
+  'meta': { u'code': 200, u'message': u'success'}}
+```
+
 ### Retrieve list of Image choices
 
 You can retrieve data by use same object of connector that you have been created with you project key
@@ -57,6 +78,35 @@ You can retrieve data by use same object of connector that you have been created
 | page     | 	interger | No | default 0|
 | per_page 	     | string      | No | default 20 |
 
+##### response
+```
+{ 'code': 200,
+  'data': { u'image': { u'allow_empty': False,
+                        u'answer': [],
+                        u'categories': [u'face,', u'eye'],
+                        u'credit_charged': 0,
+                        u'custom_id': None,
+                        u'data': u'[image URL]',
+                        u'id': u'5a56c56f60f4f17a353d3113',
+                        u'instruction': u'face',
+                        u'multiple': False,
+                        u'postback_url': u'[your callback URL]',
+                        u'processed_at': None,
+                        u'project_id': 82,
+                        u'status': u'unprocess'}},
+  'error_code': None,
+  'message': { u'code': 200,
+               u'current_page': 1,
+               u'message': u'success',
+               u'next_page': -1,
+               u'prev_page': -1,
+               u'total_count': 2,
+               u'total_pages': 1}}
+  'message': u'success',
+  'meta': { u'code': 200, u'message': u'success'}}
+```
+#### Note: your date is wrap into ```image``` 
+
 ### Retrieve data by ID of image
 
 ```python
@@ -68,9 +118,37 @@ You can retrieve data by use same object of connector that you have been created
 | id	     | string  |   No | Image id|
 |custom_id | string |    No | Client's image id |
 
+##### response
+```
+{ 'code': 200,
+  'data': { u'images': [ { u'allow_empty': False,
+                           u'answer': [],
+                           u'categories': [u'face', u'ear'],
+                           u'credit_charged': 0,
+                           u'custom_id': None,
+                           u'data': u'[image URL]',
+                           u'id': u'5a546e4160f4f17a353d3106',
+                           u'instruction': u'face',
+                           u'multiple': False,
+                           u'postback_url': u'[your callback URL]',
+                           u'processed_at': None,
+                           u'project_id': 82,
+                           u'status': u'unprocess'} 
+                           {...},
+                           {...}]},
+  'error_code': None,
+  'message': u'success',
+  'meta': { u'code': 200,
+            u'current_page': 1,
+            u'message': u'success',
+            u'next_page': -1,
+            u'prev_page': -1,
+            u'total_count': 3,
+            u'total_pages': 1}}
+```
 
 ## Closed questions
-[Standard Criteria (5 mins response time)]
+[Standard Criteria]
 
 ### Create
 ```python
@@ -85,6 +163,24 @@ You can retrieve data by use same object of connector that you have been created
 | postback_url	     | string      | No | Image postback url|
 | postback_method     | 	string | No |Postback method|
 | custom_id	     | string      |   No |Custom's id|
+
+##### response
+```
+{ 'code': 200,
+  'data': { u'answer': None,
+            u'credit_charged': 0,
+            u'custom_id': None,
+            u'data': u'[image URL]',
+            u'id': u'5a56d5ad60f4f17a353d3120',
+            u'postback_url': u'your callback URL',
+            u'processed_at': None,
+            u'project_id': 86,
+            u'status': u'unprocess'},
+  'error_code': None,
+  'message': u'success',
+  'meta': { u'code': 200, u'message': u'success'}}
+```
+
 ### Retrieve list of data
 
 You can retrieve data by use same object of connector that you have been created with you project key
@@ -97,6 +193,30 @@ You can retrieve data by use same object of connector that you have been created
 | ------------- |:-------------:| :-----:| :-----|
 | page     | 	interger | No | default 0|
 | per_page 	     | string      | No | default 20 |
+
+```
+{ 'code': 200,
+  'data': { u'images': [ { u'answer': None,
+                           u'credit_charged': 0,
+                           u'custom_id': None,
+                           u'data': u'[image URL]',
+                           u'postback_url': u'[your callback URL]',
+                           u'processed_at': None,
+                           u'project_id': 86,
+                           u'status': u'unprocess'},
+                           {...},
+                           {...}]},
+  'error_code': None,
+  'message': u'success',
+  'meta': { u'code': 200,
+            u'current_page': 1,
+            u'message': u'success',
+            u'next_page': -1,
+            u'prev_page': -1,
+            u'total_count': 3,
+            u'total_pages': 1}}
+```
+
 ### Retrieve data by ID of image
 
 ```python
@@ -108,8 +228,27 @@ You can retrieve data by use same object of connector that you have been created
 | id	     | string      |   No | Image id|
 | custom_id | string     |    No | Client's image id |
 
+##### response
+```
+{ 'code': 200,
+  'data': { u'image': { u'answer': None,
+                        u'credit_charged': 0,
+                        u'custom_id': None,
+                        u'data': u'[image URL]',
+                        u'id': u'5a56d5ad60f4f17a353d3120',
+                        u'postback_url': u'[your callback URL]',
+                        u'processed_at': None,
+                        u'project_id': 86,
+                        u'status': u'unprocess'}},
+  'error_code': None,
+  'message': u'success',
+  'meta': { u'code': 200, u'message': u'success'}}
+```
+
+
+
 ## Image messages
-[Message Question from Image (30 mins response time)]
+[Message Question from Image]
 
 ### Create
 ```python
@@ -127,6 +266,24 @@ You can retrieve data by use same object of connector that you have been created
 | postback_method     | 	string | No |Postback method|
 | custom_id	     | string      |   No |Custom's id|
 
+##### response 
+```
+{ 'code': 200,
+  'data': { u'answer': None,
+            u'credit_charged': 0,
+            u'custom_id': None,
+            u'data': u'[image URL]',
+            u'id': u'5a56d8f660f4f17a353d3121',
+            u'instruction': u'face',
+            u'postback_url': u'[your callback URL]',
+            u'processed_at': None,
+            u'project_id': 84,
+            u'status': u'unprocess'},
+  'error_code': None,
+  'message': u'success',
+  'meta': { u'code': 200, u'message': u'success'}}
+```
+
 ### Retrieve list of Image messages
 
 You can retrieve data by use same object of connector that you have been created with you project key
@@ -140,6 +297,32 @@ You can retrieve data by use same object of connector that you have been created
 | page     | 	interger | No | default 0|
 | per_page 	     | string      | No | default 20 |
 
+##### response 
+```
+{ 'code': 200,
+  'data': { u'images': [ { u'answer': None,
+                           u'credit_charged': 0,
+                           u'custom_id': None,
+                           u'data': u'[image URL]',
+                           u'id': u'5a56d8f660f4f17a353d3121',
+                           u'instruction': u'face',
+                           u'postback_url': u'[your callback URL]',
+                           u'processed_at': None,
+                           u'project_id': 84,
+                           u'status': u'unprocess'},
+                           {...},
+                           {...}]},
+  'error_code': None,
+  'message': u'success',
+  'meta': { u'code': 200,
+            u'current_page': 1,
+            u'message': u'success',
+            u'next_page': -1,
+            u'prev_page': -1,
+            u'total_count': 3,
+            u'total_pages': 1}}
+```
+
 ### Retrieve data by ID of image
 
 ```python
@@ -151,8 +334,27 @@ You can retrieve data by use same object of connector that you have been created
 | id	     | string      |   No | Image id|
 |custom_id | string     |    No | Client's image id |
 
+##### response 
+```
+{ 'code': 200,
+  'data': { u'image': { u'answer': None,
+                        u'credit_charged': 0,
+                        u'custom_id': None,
+                        u'data': u'[image URL]',
+                        u'id': u'5a56d8f660f4f17a353d3121',
+                        u'instruction': u'face',
+                        u'postback_url': u'[your URL]',
+                        u'processed_at': None,
+                        u'project_id': 84,
+                        u'status': u'unprocess'}},
+  'error_code': None,
+  'message': u'success',
+  'meta': { u'code': 200, u'message': u'success'}}
+```
+
+
 ## Photo tags
-[Tag an object in the image (60 mins response time)]
+[Tag an object in the image]
 
 ### Create
 ```python
@@ -169,6 +371,24 @@ You can retrieve data by use same object of connector that you have been created
 | postback_method     | 	string | No |Postback method|
 | custom_id	     | string      |   No |Custom's id|
 
+##### response 
+```
+{ 'code': 200,
+  'data': { u'answer': [],
+            u'credit_charged': 0,
+            u'custom_id': None,
+            u'data': u'[image URL]',
+            u'id': u'5a56da1460f4f17a353d3122',
+            u'instruction': u'face',
+            u'postback_url': u'[your callback URL]',
+            u'processed_at': None,
+            u'project_id': 85,
+            u'status': u'unprocess'},
+  'error_code': None,
+  'message': u'success',
+  'meta': { u'code': 200, u'message': u'success'}}
+```
+
 ### Retrieve list of photo tag
 
 You can retrieve data by use same object of connector that you have been created with you project key
@@ -182,6 +402,32 @@ You can retrieve data by use same object of connector that you have been created
 | page     | 	interger | No | default 0|
 | per_page 	     | string      | No | default 20 |
 
+##### response 
+```
+{ 'code': 200,
+  'data': { u'images': [ { u'answer': [],
+                           u'credit_charged': 0,
+                           u'custom_id': None,
+                           u'data': u'[image URL]',
+                           u'id': u'5a56da1460f4f17a353d3122',
+                           u'instruction': u'face',
+                           u'postback_url': u'[your image URL]',
+                           u'processed_at': None,
+                           u'project_id': 85,
+                           u'status': u'unprocess'},
+                           {...},
+                           {...}]},
+  'error_code': None,
+  'message': u'success',
+  'meta': { u'code': 200,
+            u'current_page': 1,
+            u'message': u'success',
+            u'next_page': -1,
+            u'prev_page': -1,
+            u'total_count': 3,
+            u'total_pages': 1}}
+```
+
 ### Retrieve data by ID
 all module of images is use same function to retrieve data with ID  
 ```python
@@ -193,18 +439,31 @@ all module of images is use same function to retrieve data with ID
 | id	     | string      |   No | Image id|
 |custom_id | string     |    No | Client's image id |
 
-
-
-
-
+##### response 
+```
+{ 'code': 200,
+  'data': { u'image': { u'answer': [],
+                        u'credit_charged': 0,
+                        u'custom_id': None,
+                        u'data': u'[image URL]',
+                        u'id': u'5a56da1460f4f17a353d3122',
+                        u'instruction': u'face',
+                        u'postback_url': u'',
+                        u'processed_at': None,
+                        u'project_id': 85,
+                        u'status': u'unprocess'}},
+  'error_code': None,
+  'message': u'success',
+  'meta': { u'code': 200, u'message': u'success'}}
+```
 
 ## Prediction
-Images (AI Beta / 95% accuracy)
+[Images (AI Beta)]
 
-- [nanameue] Standard Criteria (~1 min)
-- [sexual] Nudity/Sexual (~1 min)
-- [demographic] Demographic (~3 mins)
-- [ai_human] Standard Criteria & Human
+- Standard Criteria
+- Nudity/Sexual
+- Demographic
+- Standard Criteria & Human
 
 ### Create
 ```python
@@ -220,8 +479,24 @@ Images (AI Beta / 95% accuracy)
 | postback_method     | 	string | No |Postback method|
 | custom_id	     | string      |   No |Custom's id|
 
-### Retrieve list of photo tag
+##### response 
+```
+{ 'code': 200,
+  'data': { u'answer': None,
+            u'credit_charged': 0,
+            u'custom_id': None,
+            u'data': u'[image URL]',
+            u'id': u'5a57144660f4f17a353d313d',
+            u'postback_url': u'[your callback URL]',
+            u'processed_at': None,
+            u'project_id': 87,
+            u'status': u'processing'},
+  'error_code': None,
+  'message': u'success',
+  'meta': { u'code': 200, u'message': u'success'}}
+```
 
+### Retrieve list of prediction
 You can retrieve data by use same object of connector that you have been created with you project key
 
 ```python 
@@ -232,6 +507,32 @@ You can retrieve data by use same object of connector that you have been created
 | ------------- |:-------------:| :-----:| :-----|
 | page     | 	interger | No | default 0|
 | per_page 	     | string      | No | default 20 |
+
+
+##### response 
+```
+{ 'code': 200,
+  'data': { u'images': [ { u'answer': None,
+                           u'credit_charged': 0,
+                           u'custom_id': None,
+                           u'data': u'[image URL]',
+                           u'id': u'5a57144660f4f17a353d313d',
+                           u'postback_url': u'[your callback URL]',
+                           u'processed_at': None,
+                           u'project_id': 87,
+                           u'status': u'processing'},
+                           {...},
+                           {...}]},
+  'error_code': None,
+  'message': u'success',
+  'meta': { u'code': 200,
+            u'current_page': 1,
+            u'message': u'success',
+            u'next_page': -1,
+            u'prev_page': -1,
+            u'total_count': 2,
+            u'total_pages': 1}}
+```
 
 ### Retrieve data by ID
 all module of images is use same function to retrieve data with ID  
@@ -244,14 +545,109 @@ all module of images is use same function to retrieve data with ID
 | id	     | string      |   No | Image id|
 |custom_id | string     |    No | Client's image id |
 
-There are a difference type of response AI module here is a compare response of each type
-#### [nanameue] Standard Criteria (~1 min)
-#### [sexual] Nudity/Sexual (~1 min)
-#### [demographic] Demographic (~3 mins)
-#### [ai_human] Standard Criteria & Human
 
+##### response 
 
+```
+{ 'code': 200,
+  'data': { u'image': { u'answer': None,
+                        u'credit_charged': 0,
+                        u'custom_id': None,
+                        u'data': u'[image URL]',
+                        u'id': u'5a57144660f4f17a353d313d',
+                        u'postback_url': u'[your callback URL]',
+                        u'processed_at': None,
+                        u'project_id': 87,
+                        u'status': u'processing'}},
+  'error_code': None,
+  'message': u'success',
+  'meta': { u'code': 200, u'message': u'success'}}
+```
 
+### Response of each type AI
+There are a difference type of response AI module here is a compare response of each
+#### Standard Criteria
+
+###### response 
+```
+{ 'code': 200,
+  'data': { u'image': { u'answer': u'approved',
+                        u'credit_charged': 0,
+                        u'custom_id': None,
+                        u'data': u'[image URL]',
+                        u'id': u'5a570d8860f4f17a353d313b',
+                        u'postback_url': u'[your callback URL]',
+                        u'processed_at': None,
+                        u'project_id': 87,
+                        u'status': u'processing'}},
+  'error_code': None,
+  'message': u'success',
+  'meta': { u'code': 200, u'message': u'success'}}
+```
+#### Nudity/Sexual
+###### response 
+```
+{ 'code': 200,
+  'data': { u'image': { u'answer': { u'sexual': 0.0003511860850267112 } ,
+                        u'credit_charged': 1,
+                        u'custom_id': None,
+                        u'data': u'[image URL]',
+                        u'id': u'5a547c1660f4f17a353d310c',
+                        u'postback_url': u'[your URL]',
+                        u'processed_at': u'2018-01-11T11:53:15.197+07:00',
+                        u'project_id': 81,
+                        u'status': u'processed'}},
+  'error_code': None,
+  'message': u'success',
+  'meta': { u'code': 200, u'message': u'success'}}
+```
+#### Demographic
+###### response 
+```
+{ 'code': 200,
+  'data': { u'answer': { u'result': [ 
+                           { u'age': 25,
+                             u'age_prob': 0.08679278939962387,
+                             u'gender': u'male',
+                             u'gender_prob': 0.9268079400062561,
+                             u'positions': 
+	                           { u'h': 268.20000000000005,
+                                 u'w': 248.8,
+                                 u'x': 0,
+                                 u'y': 11.599999999999994
+                               }
+                            }
+                          ]
+                        },
+                        u'credit_charged': 0,
+                        u'custom_id': None,
+                        u'data': u'[image URL]',
+                        u'id': u'5a5706f460f4f17a353d313a',
+                        u'postback_url': u'[your callback URL]',
+                        u'processed_at': u'2018-01-11T13:40:57.789+07:00',
+                        u'project_id': 80,
+                        u'status': u'processed'},
+  'error_code': None,
+  'message': u'success',
+  'meta': { u'code': 200, u'message': u'success'}}
+```
+#### Standard Criteria & Human
+###### response 
+```
+{ 'code': 200,
+  'data': { u'image': { u'answer': u'approved',
+                        u'credit_charged': 1,
+                        u'custom_id': None,
+                        u'data': u'[image URL]',
+                        u'id': u'5a547c1660f4f17a353d310c',
+                        u'postback_url': u'[your URL]',
+                        u'processed_at': u'2018-01-11T11:53:15.197+07:00',
+                        u'project_id': 81,
+                        u'status': u'processed'}},
+  'error_code': None,
+  'message': u'success',
+  'meta': { u'code': 200, u'message': u'success'}}
+```
 
 
 # Response
@@ -271,5 +667,5 @@ For check error or status by calling this
 also you can get HTTP success by this
 
 ```python 
->>> result.success_code # 200
+>>> result.code # 200
 ```
