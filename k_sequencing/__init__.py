@@ -28,7 +28,8 @@ class Connector(object):
             self.project_key = project_key
 
         self.headers = self._build_header(headers)
-        self.base_api = 'https://k-sequencing.datawow.io/api/'
+        # self.base_api = 'https://k-sequencing.datawow.io/api/'
+        self.base_api = 'https://kseq.datawow.io/api/'
 
     def _build_header(self, headers=None):
 
@@ -59,10 +60,11 @@ class Connector(object):
             return responses.Responses(error_code=response.status_code,
                                        message=response.json())
         else:
-            return responses.Responses(success_code=response.status_code,
+            return responses.Responses(code=response.json()
+                                       .get('meta').get('code'),
                                        message=response.json()
-                                       .get('meta')
-                                       .get('message'), data=response.json()
+                                       .get('meta'),
+                                       data=response.json()
                                        .get('data'))
 
     """ ----- get by id  metohd ----- """
