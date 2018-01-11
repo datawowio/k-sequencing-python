@@ -1,5 +1,6 @@
 # k-sequencing-python
-k-sequencing-python is rest library for python version.
+3rd for k-sequencing in python version 
+
 
 # Installation 
 ```
@@ -414,8 +415,8 @@ You can retrieve data by use same object of connector that you have been created
                            u'processed_at': None,
                            u'project_id': 85,
                            u'status': u'unprocess'},
-		            				   {...},
-		            				   {...}]},
+                           {...},
+                           {...}]},
   'error_code': None,
   'message': u'success',
   'meta': { u'code': 200,
@@ -521,7 +522,7 @@ You can retrieve data by use same object of connector that you have been created
                            u'project_id': 87,
                            u'status': u'processing'},
                            {...},
-		            				   {...}]},
+                           {...}]},
   'error_code': None,
   'message': u'success',
   'meta': { u'code': 200,
@@ -605,7 +606,7 @@ There are a difference type of response AI module here is a compare response of 
 ```
 { 'code': 200,
   'data': { u'answer': { u'result': [ 
-						   { u'age': 25,
+                           { u'age': 25,
                              u'age_prob': 0.08679278939962387,
                              u'gender': u'male',
                              u'gender_prob': 0.9268079400062561,
