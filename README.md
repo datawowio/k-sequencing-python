@@ -1,6 +1,5 @@
 # k-sequencing-python
-3rd for k-sequencing in python version 
-
+k-sequencing-python is rest library for python version.
 
 # Installation 
 ```
