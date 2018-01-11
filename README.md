@@ -46,7 +46,8 @@ Python supports the following Python versions:
 
 ##### response 
 ```
-{ 'data': { u'allow_empty': False,
+{ 'code': 200,
+  'data': { u'allow_empty': False,
             u'answer': [],
             u'categories': [u'face,', u'eye'],
             u'credit_charged': 0,
@@ -60,8 +61,8 @@ Python supports the following Python versions:
             u'project_id': 82,
             u'status': u'unprocess'},
   'error_code': None,
-  'message': { u'code': 201, u'message': u'success'},
-  'success_code': 201}
+  'message': u'success',
+  'meta': { u'code': 200, u'message': u'success'}}
 ```
 
 ### Retrieve list of Image choices
@@ -79,22 +80,30 @@ You can retrieve data by use same object of connector that you have been created
 
 ##### response
 ```
-{ 'data': { u'image': { u'allow_empty': False,
+{ 'code': 200,
+  'data': { u'image': { u'allow_empty': False,
                         u'answer': [],
                         u'categories': [u'face,', u'eye'],
                         u'credit_charged': 0,
                         u'custom_id': None,
-                        u'data': u'https://s3-us-west-1.amazonaws.com/powr/defaults/image-slider2.jpg',
+                        u'data': u'[image URL]',
                         u'id': u'5a56c56f60f4f17a353d3113',
                         u'instruction': u'face',
                         u'multiple': False,
-                        u'postback_url': u'https://kiyo-staging.datawow.io/callbacks',
+                        u'postback_url': u'[your callback URL]',
                         u'processed_at': None,
                         u'project_id': 82,
                         u'status': u'unprocess'}},
   'error_code': None,
-  'message': { u'code': 200, u'message': u'success'},
-  'success_code': 200}
+  'message': { u'code': 200,
+               u'current_page': 1,
+               u'message': u'success',
+               u'next_page': -1,
+               u'prev_page': -1,
+               u'total_count': 2,
+               u'total_pages': 1}}
+  'message': u'success',
+  'meta': { u'code': 200, u'message': u'success'}}
 ```
 #### Note: your date is wrap into ```image``` 
 
@@ -111,7 +120,8 @@ You can retrieve data by use same object of connector that you have been created
 
 ##### response
 ```
-{ 'data': { u'images': [ { u'allow_empty': False,
+{ 'code': 200,
+  'data': { u'images': [ { u'allow_empty': False,
                            u'answer': [],
                            u'categories': [u'face', u'ear'],
                            u'credit_charged': 0,
@@ -127,14 +137,14 @@ You can retrieve data by use same object of connector that you have been created
                            {...},
                            {...}]},
   'error_code': None,
-  'message': { u'code': 200,
-               u'current_page': 1,
-               u'message': u'success',
-               u'next_page': 2,
-               u'prev_page': -1,
-               u'total_count': 37,
-               u'total_pages': 2},
-  'success_code': 200}
+  'message': u'success',
+  'meta': { u'code': 200,
+            u'current_page': 1,
+            u'message': u'success',
+            u'next_page': -1,
+            u'prev_page': -1,
+            u'total_count': 3,
+            u'total_pages': 1}}
 ```
 
 ## Closed questions
@@ -156,7 +166,8 @@ You can retrieve data by use same object of connector that you have been created
 
 ##### response
 ```
-{ 'data': { u'answer': None,
+{ 'code': 200,
+  'data': { u'answer': None,
             u'credit_charged': 0,
             u'custom_id': None,
             u'data': u'[image URL]',
@@ -166,8 +177,8 @@ You can retrieve data by use same object of connector that you have been created
             u'project_id': 86,
             u'status': u'unprocess'},
   'error_code': None,
-  'message': { u'code': 200, u'message': u'success'},
-  'success_code': 201}
+  'message': u'success',
+  'meta': { u'code': 200, u'message': u'success'}}
 ```
 
 ### Retrieve list of data
@@ -184,7 +195,8 @@ You can retrieve data by use same object of connector that you have been created
 | per_page 	     | string      | No | default 20 |
 
 ```
-{ 'data': { u'images': [ { u'answer': None,
+{ 'code': 200,
+  'data': { u'images': [ { u'answer': None,
                            u'credit_charged': 0,
                            u'custom_id': None,
                            u'data': u'[image URL]',
@@ -195,14 +207,14 @@ You can retrieve data by use same object of connector that you have been created
                            {...},
                            {...}]},
   'error_code': None,
-  'message': { u'code': 200,
-               u'current_page': 1,
-               u'message': u'success',
-               u'next_page': -1,
-               u'prev_page': -1,
-               u'total_count': 2,
-               u'total_pages': 1},
-  'success_code': 200}
+  'message': u'success',
+  'meta': { u'code': 200,
+            u'current_page': 1,
+            u'message': u'success',
+            u'next_page': -1,
+            u'prev_page': -1,
+            u'total_count': 3,
+            u'total_pages': 1}}
 ```
 
 ### Retrieve data by ID of image
@@ -218,7 +230,8 @@ You can retrieve data by use same object of connector that you have been created
 
 ##### response
 ```
-{ 'data': { u'image': { u'answer': None,
+{ 'code': 200,
+  'data': { u'image': { u'answer': None,
                         u'credit_charged': 0,
                         u'custom_id': None,
                         u'data': u'[image URL]',
@@ -228,8 +241,8 @@ You can retrieve data by use same object of connector that you have been created
                         u'project_id': 86,
                         u'status': u'unprocess'}},
   'error_code': None,
-  'message': { u'code': 200, u'message': u'success'},
-  'success_code': 200}
+  'message': u'success',
+  'meta': { u'code': 200, u'message': u'success'}}
 ```
 
 
@@ -255,7 +268,8 @@ You can retrieve data by use same object of connector that you have been created
 
 ##### response 
 ```
-{ 'data': { u'answer': None,
+{ 'code': 200,
+  'data': { u'answer': None,
             u'credit_charged': 0,
             u'custom_id': None,
             u'data': u'[image URL]',
@@ -266,8 +280,8 @@ You can retrieve data by use same object of connector that you have been created
             u'project_id': 84,
             u'status': u'unprocess'},
   'error_code': None,
-  'message': { u'code': 200, u'message': u'success'},
-  'success_code': 201}
+  'message': u'success',
+  'meta': { u'code': 200, u'message': u'success'}}
 ```
 
 ### Retrieve list of Image messages
@@ -285,7 +299,8 @@ You can retrieve data by use same object of connector that you have been created
 
 ##### response 
 ```
-{ 'data': { u'images': [ { u'answer': None,
+{ 'code': 200,
+  'data': { u'images': [ { u'answer': None,
                            u'credit_charged': 0,
                            u'custom_id': None,
                            u'data': u'[image URL]',
@@ -298,14 +313,14 @@ You can retrieve data by use same object of connector that you have been created
                            {...},
                            {...}]},
   'error_code': None,
-  'message': { u'code': 200,
-               u'current_page': 1,
-               u'message': u'success',
-               u'next_page': -1,
-               u'prev_page': -1,
-               u'total_count': 2,
-               u'total_pages': 1},
-  'success_code': 200}
+  'message': u'success',
+  'meta': { u'code': 200,
+            u'current_page': 1,
+            u'message': u'success',
+            u'next_page': -1,
+            u'prev_page': -1,
+            u'total_count': 3,
+            u'total_pages': 1}}
 ```
 
 ### Retrieve data by ID of image
@@ -321,7 +336,8 @@ You can retrieve data by use same object of connector that you have been created
 
 ##### response 
 ```
-{ 'data': { u'image': { u'answer': None,
+{ 'code': 200,
+  'data': { u'image': { u'answer': None,
                         u'credit_charged': 0,
                         u'custom_id': None,
                         u'data': u'[image URL]',
@@ -332,8 +348,8 @@ You can retrieve data by use same object of connector that you have been created
                         u'project_id': 84,
                         u'status': u'unprocess'}},
   'error_code': None,
-  'message': { u'code': 200, u'message': u'success'},
-  'success_code': 200}
+  'message': u'success',
+  'meta': { u'code': 200, u'message': u'success'}}
 ```
 
 
@@ -357,7 +373,8 @@ You can retrieve data by use same object of connector that you have been created
 
 ##### response 
 ```
-{ 'data': { u'answer': [],
+{ 'code': 200,
+  'data': { u'answer': [],
             u'credit_charged': 0,
             u'custom_id': None,
             u'data': u'[image URL]',
@@ -368,8 +385,8 @@ You can retrieve data by use same object of connector that you have been created
             u'project_id': 85,
             u'status': u'unprocess'},
   'error_code': None,
-  'message': { u'code': 200, u'message': u'success'},
-  'success_code': 201}
+  'message': u'success',
+  'meta': { u'code': 200, u'message': u'success'}}
 ```
 
 ### Retrieve list of photo tag
@@ -387,39 +404,29 @@ You can retrieve data by use same object of connector that you have been created
 
 ##### response 
 ```
-{ 'data': { u'images': [ { u'answer': [],
-                           u'credit_charged': 0,
-                           u'custom_id': None,
-                           u'data': u'https://s3-us-west-1.amazonaws.com/powr/defaults/image-slider2.jpg',
-                           u'id': u'5a56da1460f4f17a353d3122',
-                           u'instruction': u'face',
-                           u'postback_url': u'https://kiyo-staging.datawow.io/callbacks',
-                           u'processed_at': None,
-                           u'project_id': 85,
-                           u'status': u'unprocess'},
-                         { u'answer': [],
+{ 'code': 200,
+  'data': { u'images': [ { u'answer': [],
                            u'credit_charged': 0,
                            u'custom_id': None,
                            u'data': u'[image URL]',
-                           u'id': u'5a56c57060f4f17a353d3116',
+                           u'id': u'5a56da1460f4f17a353d3122',
                            u'instruction': u'face',
-                           u'postback_url': u'[your callback URL]',
+                           u'postback_url': u'[your image URL]',
                            u'processed_at': None,
                            u'project_id': 85,
-                           u'status': u'unprocess'}
+                           u'status': u'unprocess'},
 						   {...},
 						   {...}]},
   'error_code': None,
-  'message': { u'code': 200,
-               u'current_page': 1,
-               u'message': u'success',
-               u'next_page': -1,
-               u'prev_page': -1,
-               u'total_count': 2,
-               u'total_pages': 1},
-  'success_code': 200}
+  'message': u'success',
+  'meta': { u'code': 200,
+            u'current_page': 1,
+            u'message': u'success',
+            u'next_page': -1,
+            u'prev_page': -1,
+            u'total_count': 3,
+            u'total_pages': 1}}
 ```
-
 
 ### Retrieve data by ID
 all module of images is use same function to retrieve data with ID  
@@ -434,7 +441,8 @@ all module of images is use same function to retrieve data with ID
 
 ##### response 
 ```
-{ 'data': { u'image': { u'answer': [],
+{ 'code': 200,
+  'data': { u'image': { u'answer': [],
                         u'credit_charged': 0,
                         u'custom_id': None,
                         u'data': u'[image URL]',
@@ -445,13 +453,9 @@ all module of images is use same function to retrieve data with ID
                         u'project_id': 85,
                         u'status': u'unprocess'}},
   'error_code': None,
-  'message': { u'code': 200, u'message': u'success'},
-  'success_code': 200}
+  'message': u'success',
+  'meta': { u'code': 200, u'message': u'success'}}
 ```
-
-
-
-
 
 ## Prediction
 [Images (AI Beta)]
@@ -475,7 +479,7 @@ all module of images is use same function to retrieve data with ID
 | postback_method     | 	string | No |Postback method|
 | custom_id	     | string      |   No |Custom's id|
 
-### Retrieve list of photo tag
+### Retrieve list of prediction
 
 You can retrieve data by use same object of connector that you have been created with you project key
 
@@ -487,6 +491,12 @@ You can retrieve data by use same object of connector that you have been created
 | ------------- |:-------------:| :-----:| :-----|
 | page     | 	interger | No | default 0|
 | per_page 	     | string      | No | default 20 |
+
+
+
+
+
+
 
 ### Retrieve data by ID
 all module of images is use same function to retrieve data with ID  
@@ -504,23 +514,25 @@ There are a difference type of response AI module here is a compare response of 
 
 ###### response 
 ```
-{ 'data': { u'image': { u'answer': u'approved',
-                        u'credit_charged': 1,
+{ 'code': 200,
+  'data': { u'image': { u'answer': u'approved',
+                        u'credit_charged': 0,
                         u'custom_id': None,
                         u'data': u'[image URL]',
-                        u'id': u'5a547c1660f4f17a353d310c',
-                        u'postback_url': u'[your URL]',
-                        u'processed_at': u'2018-01-11T11:53:15.197+07:00',
-                        u'project_id': 81,
-                        u'status': u'processed'}},
+                        u'id': u'5a570d8860f4f17a353d313b',
+                        u'postback_url': u'[your callback URL]',
+                        u'processed_at': None,
+                        u'project_id': 87,
+                        u'status': u'processing'}},
   'error_code': None,
-  'message': { u'code': 200, u'message': u'success'},
-  'success_code': 200}
+  'message': u'success',
+  'meta': { u'code': 200, u'message': u'success'}}
 ```
 #### [sexual] Nudity/Sexual
 ###### response 
 ```
-{ 'data': { u'image': { u'answer': { u'sexual': 0.0003511860850267112 } ,
+{ 'code': 200,
+  'data': { u'image': { u'answer': { u'sexual': 0.0003511860850267112 } ,
                         u'credit_charged': 1,
                         u'custom_id': None,
                         u'data': u'[image URL]',
@@ -530,29 +542,44 @@ There are a difference type of response AI module here is a compare response of 
                         u'project_id': 81,
                         u'status': u'processed'}},
   'error_code': None,
-  'message': { u'code': 200, u'message': u'success'},
-  'success_code': 200}
+  'message': u'success',
+  'meta': { u'code': 200, u'message': u'success'}}
 ```
 #### [demographic] Demographic
 ###### response 
 ```
-{ 'data': { u'image': { u'answer': u'approved',
-                        u'credit_charged': 1,
+{ 'code': 200,
+  'data': { u'answer': { u'result': [ 
+						   { u'age': 25,
+                             u'age_prob': 0.08679278939962387,
+                             u'gender': u'male',
+                             u'gender_prob': 0.9268079400062561,
+                             u'positions': 
+	                           { u'h': 268.20000000000005,
+                                 u'w': 248.8,
+                                 u'x': 0,
+                                 u'y': 11.599999999999994
+                               }
+                            }
+                          ]
+                        },
+                        u'credit_charged': 0,
                         u'custom_id': None,
                         u'data': u'[image URL]',
-                        u'id': u'5a547c1660f4f17a353d310c',
-                        u'postback_url': u'[your URL]',
-                        u'processed_at': u'2018-01-11T11:53:15.197+07:00',
-                        u'project_id': 81,
-                        u'status': u'processed'}},
+                        u'id': u'5a5706f460f4f17a353d313a',
+                        u'postback_url': u'[your callback URL]',
+                        u'processed_at': u'2018-01-11T13:40:57.789+07:00',
+                        u'project_id': 80,
+                        u'status': u'processed'},
   'error_code': None,
-  'message': { u'code': 200, u'message': u'success'},
-  'success_code': 200}
+  'message': u'success',
+  'meta': { u'code': 200, u'message': u'success'}}
 ```
 #### [ai_human] Standard Criteria & Human
 ###### response 
 ```
-{ 'data': { u'image': { u'answer': u'approved',
+{ 'code': 200,
+  'data': { u'image': { u'answer': u'approved',
                         u'credit_charged': 1,
                         u'custom_id': None,
                         u'data': u'[image URL]',
@@ -562,8 +589,8 @@ There are a difference type of response AI module here is a compare response of 
                         u'project_id': 81,
                         u'status': u'processed'}},
   'error_code': None,
-  'message': { u'code': 200, u'message': u'success'},
-  'success_code': 200}
+  'message': u'success',
+  'meta': { u'code': 200, u'message': u'success'}}
 ```
 
 
@@ -584,5 +611,5 @@ For check error or status by calling this
 also you can get HTTP success by this
 
 ```python 
->>> result.success_code # 200
+>>> result.code # 200
 ```

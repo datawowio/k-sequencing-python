@@ -63,7 +63,8 @@ class Connector(object):
             return responses.Responses(code=response.json()
                                        .get('meta').get('code'),
                                        message=response.json()
-                                       .get('meta'),
+                                       .get('meta').get('message'),
+                                       meta=response.json().get('meta'),
                                        data=response.json()
                                        .get('data'))
 
