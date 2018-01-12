@@ -97,7 +97,7 @@ class ClosedQuestion():
             headers=self.headers)
 
     def list(self, params=None):
-        """Get image choices
+        """Get image closed questions
 
         Args:
             page (int): Page of data
@@ -112,7 +112,7 @@ class ClosedQuestion():
 
         return Connector(self.token).send(
             method='GET',
-            url='images/choices',
+            url='images/closed_questions',
             data=params)
 
     def find_id(self, image_id=None):
@@ -163,7 +163,7 @@ class Message():
             data=params)
 
     def list(self, params=None):
-        """Get image choices
+        """Get image messages
 
         Args:
             page (int): Page of data
@@ -178,7 +178,7 @@ class Message():
 
         return Connector(self.token).send(
             method='GET',
-            url='images/choices',
+            url='images/messages',
             data=params)
 
     def find_id(self, image_id=None):
@@ -229,7 +229,7 @@ class PhotoTag():
             data=params)
 
     def list(self, params=None):
-        """Get image choices
+        """Get image photo tags
 
         Args:
             page (int): Page of data
@@ -239,12 +239,11 @@ class PhotoTag():
 
         Raises:
 
-
-         """
+        """
 
         return Connector(self.token).send(
             method='GET',
-            url='images/choices',
+            url='images/photo_tags',
             data=params)
 
     def find_id(self, image_id=None):
@@ -294,7 +293,7 @@ class Prediction():
             headers=self.headers)
 
     def list(self, params=None):
-        """Get image choices
+        """Get prediction
 
         Args:
             page (int): Page of data
@@ -304,12 +303,11 @@ class Prediction():
 
         Raises:
 
-
          """
 
         return Connector(self.token).send(
             method='GET',
-            url='images/choices',
+            url='prime/predictions',
             data=params)
 
     def find_id(self, image_id=None):
