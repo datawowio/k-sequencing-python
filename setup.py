@@ -13,7 +13,7 @@ setup(
     author_email='info@datawow.io',
     license='MIT',
     packages=['k_sequencing'],
-    install_requires=['requests'],
+    install_requires=['requests', 'mock >= 2.0.0'],
     test_suite='k_sequencing.test',
     classifiers=[
         "License :: OSI Approved :: MIT License",

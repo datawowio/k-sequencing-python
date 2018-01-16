@@ -44,6 +44,8 @@ class Connector(object):
     def send(self, method='GET', url=None, data=None, headers=None):
 
         session = Session()
+        if headers is None:
+            headers = self.headers
 
         builder = Request(
             method,
