@@ -70,6 +70,7 @@ Python supports the following Python versions:
 You can retrieve data by use same object of connector that you have been created with you project key
 
 ```python 
+>>> ks = k_sequencing
 >>> result = ks.Choice('PROJECT KEY').list()
 ```
 ##### params
@@ -110,6 +111,7 @@ You can retrieve data by use same object of connector that you have been created
 ### Retrieve data by ID of image
 
 ```python
+>>> ks = k_sequencing
 >>> result = ks.Choice("PROJECT KEY").find_id("YOUR IMAGE ID")
 ```
 ##### params
@@ -153,6 +155,7 @@ You can retrieve data by use same object of connector that you have been created
 ### Create
 ```python
 >>> param = {'instruction': 'face', 'data': 'URL_IMAGE'}
+>>> ks = k_sequencing
 >>> result = ks.ClosedQuestion("PROJECT KEY").create(params=param)
 ```
 ##### params
@@ -185,6 +188,7 @@ You can retrieve data by use same object of connector that you have been created
 You can retrieve data by use same object of connector that you have been created with you project key
 
 ```python 
+>>> ks = k_sequencing
 >>> result = con.ClosedQuestion("PROJECT KEY").list()
 ```
 ##### params
@@ -219,6 +223,7 @@ You can retrieve data by use same object of connector that you have been created
 ### Retrieve data by ID of image
 
 ```python
+>>> ks = k_sequencing
 >>> result = ks.ClosedQuestion("PROJECT KEY").find_id("YOUR IMAGE ID")
 ```
 ##### params
@@ -252,6 +257,7 @@ You can retrieve data by use same object of connector that you have been created
 ### Create
 ```python
 >>> param = {'instruction': 'face', 'data': 'URL_IMAGE'}
+>>> ks = k_sequencing
 >>> result = ks.Message("PROJECT KEY").create(params=param)
 ```
 
@@ -287,6 +293,7 @@ You can retrieve data by use same object of connector that you have been created
 You can retrieve data by use same object of connector that you have been created with you project key
 
 ```python 
+>>> ks = k_sequencing
 >>> result = ks.Message("PROJECT KEY").list()
 ```
 ##### params
@@ -324,6 +331,7 @@ You can retrieve data by use same object of connector that you have been created
 ### Retrieve data by ID of image
 
 ```python
+>>> ks = k_sequencing
 >>> result = ks.Message("PROJECT KEY").find_id("YOUR IMAGE ID")
 ```
 ##### params
@@ -357,6 +365,7 @@ You can retrieve data by use same object of connector that you have been created
 ### Create
 ```python
 >>> param = {'instruction': 'face', 'data': 'URL_IMAGE'}
+>>> ks = k_sequencing
 >>> result = ks.PhotoTag("PROJECT KEY").create(params=param)
 ```
 ##### params
@@ -391,6 +400,7 @@ You can retrieve data by use same object of connector that you have been created
 You can retrieve data by use same object of connector that you have been created with you project key
 
 ```python 
+>>> ks = k_sequencing
 >>> result = ks.PhotoTag("PROJECT KEY").list()
 ```
 ##### params
@@ -428,6 +438,7 @@ You can retrieve data by use same object of connector that you have been created
 ### Retrieve data by ID
 all module of images is use same function to retrieve data with ID  
 ```python
+>>> ks = k_sequencing
 >>> result = ks.PhotoTag("PROJECT KEY").find_id("YOUR IMAGE ID")
 ```
 ##### params
@@ -465,6 +476,7 @@ all module of images is use same function to retrieve data with ID
 ### Create
 ```python
 >>> param = {'instruction': 'face', 'data': 'URL_IMAGE'}
+>>> ks = k_sequencing
 >>> result = ks.Prediction("PROJECT KEY").create(params=param)
 ```
 ##### params
@@ -496,6 +508,7 @@ all module of images is use same function to retrieve data with ID
 You can retrieve data by use same object of connector that you have been created with you project key
 
 ```python 
+>>> ks = k_sequencing
 >>> result = ks.Prediction("PROJECT KEY").list()
 ```
 ##### params
@@ -533,6 +546,7 @@ You can retrieve data by use same object of connector that you have been created
 ### Retrieve data by ID
 all module of images is use same function to retrieve data with ID  
 ```python
+>>> ks = k_sequencing
 >>> result = ks.Prediction("PROJECT KEY").find_id("YOUR IMAGE ID")
 ```
 ##### params
