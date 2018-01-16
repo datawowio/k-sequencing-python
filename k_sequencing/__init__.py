@@ -90,11 +90,10 @@ class ClosedQuestion():
 
         """
 
-        return self._connection(
+        return Connector(self.token).send(
             method='POST',
             url='images/closed_questions',
-            data=params,
-            headers=self.headers)
+            data=params)
 
     def list(self, params=None):
         """Get image closed questions
@@ -289,8 +288,7 @@ class Prediction():
         return Connector(self.token).send(
             method='POST',
             url='prime/predictions',
-            data=params,
-            headers=self.headers)
+            data=params)
 
     def list(self, params=None):
         """Get prediction
