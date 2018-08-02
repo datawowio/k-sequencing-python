@@ -1,9 +1,8 @@
 # importing the requests library
 from requests import Request, Session
 import os
-import errors
-import responses
-
+from k_sequencing import errors
+from k_sequencing import responses
 
 class Connector(object):
 
@@ -18,17 +17,17 @@ class Connector(object):
         Raises:
 
         """
-
         if project_key is None:
-            if 'PROJECT_KEY' in os.environ:
-                self.project_key = os.environ['PROJECT_KEY']
+            if 'Authorization' in os.environ:
+                self.project_key = os.environ['Authorization']
             else:
                 raise AttributeError('Project key is missing')
         else:
             self.project_key = project_key
 
         self.headers = self._build_header(headers)
-        self.base_api = 'https://k-sequencing.datawow.io/api/'
+        # self.base_api = 'https://k-sequencing.datawow.io/api/'
+        self.base_api = 'http://localhost:3001/api/'
 
     def _build_header(self, headers=None):
 
