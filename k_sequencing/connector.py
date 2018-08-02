@@ -1,12 +1,15 @@
-# importing the requests library
-from requests import Request, Session
 import os
+
+from requests import Request, Session
+
 from k_sequencing import errors
+from k_sequencing import base_common as base_config
 from k_sequencing import responses
+
 
 class Connector(object):
 
-    def __init__(self, project_key=None, headers=None):
+    def __init__(self, project_key=None, headers=None, base_url=None, model_type=None, model_class=None):
         """Create new image choices
 
         Args:
@@ -17,6 +20,9 @@ class Connector(object):
         Raises:
 
         """
+        if model_type is None or model_class is None:
+            raise AttributeError('Missing class and model')
+
         if project_key is None:
             if 'Authorization' in os.environ:
                 self.project_key = os.environ['Authorization']
@@ -26,8 +32,12 @@ class Connector(object):
             self.project_key = project_key
 
         self.headers = self._build_header(headers)
-        # self.base_api = 'https://k-sequencing.datawow.io/api/'
-        self.base_api = 'http://localhost:3001/api/'
+
+        path = base_config.path(model_type, model_class)
+        base_url = base_config.base_url(model_type)
+
+        self.base_api = base_url + path
+        print(self.base_api);
 
     def _build_header(self, headers=None):
 
@@ -40,7 +50,12 @@ class Connector(object):
 
         return headers
 
-    def send(self, method='GET', url=None, data=None, headers=None):
+    def send(self, method='GET', data=None, headers=None):
+         url = self.base_api
+
+        if data['id'] is not None:
+            url + url + data['id']
+            del data['id']
 
         session = Session()
         if headers is None:
@@ -48,7 +63,7 @@ class Connector(object):
 
         builder = Request(
             method,
-            self.base_api + url,
+            url,
             data=data,
             headers=headers)
 
@@ -67,5 +82,3 @@ class Connector(object):
                                        meta=response.json().get('meta'),
                                        data=response.json()
                                        .get('data'))
-
-

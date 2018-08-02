@@ -1,5 +1,6 @@
 from k_sequencing.connector import Connector
 
+
 class ClosedQuestion():
 
     def __init__(self, token):
@@ -22,9 +23,8 @@ class ClosedQuestion():
 
         """
 
-        return Connector(self.token).send(
+        return Connector(self.token, model_type="images", model_class="closed_questions").send(
             method='POST',
-            url='images/closed_questions',
             data=params)
 
     def list(self, params=None):
@@ -41,13 +41,11 @@ class ClosedQuestion():
 
          """
 
-        return Connector(self.token).send(
-            method='GET',
-            url='images/closed_questions',
+        return Connector(self.token, model_type="images", model_class="closed_questions").send(
+            method='POST',
             data=params)
 
     def find_id(self, image_id=None):
-
         """Get image by ID
 
         Args:
@@ -60,9 +58,6 @@ class ClosedQuestion():
 
         """
 
-        return Connector(self.token).send(
-            method='GET',
-            url='projects/images/' + image_id,
-            data=None)
-
-
+        return Connector(self.token, model_type="images", model_class="find").send(
+            method='POST',
+            data={"id": image_id})

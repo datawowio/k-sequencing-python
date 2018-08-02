@@ -1,20 +1,17 @@
 from k_sequencing.connector import Connector
 
-
-class Choice():
+class VideoClassify():
 
     def __init__(self, token):
         self.token = token
 
     def create(self, params=None):
-        """Create new image choices
+        """Create new closed questions
 
         Args:
             instruction (str): Detail about image.
-            categories (str): The list of choice. sparate by use space.
             data (str): URL of imagee
             postback_url (str): URL for callback
-            multiple (bool): Config multiple select
             postback_method (str): Config HTTP method GET POST PUT PATCH DELETE
             custom_id (str): Custom ID
             staff_id (int): assign to staff
@@ -24,12 +21,14 @@ class Choice():
         Raises:
 
         """
-        return Connector(self.token, model_type="images", model_class="choices").send(
+
+        return Connector(self.token).send(
             method='POST',
+            url='videos/closed_questions',
             data=params)
 
     def list(self, params=None):
-        """Get image choices
+        """Get image closed questions
 
         Args:
             page (int): Page of data
@@ -42,11 +41,13 @@ class Choice():
 
          """
 
-        return Connector(self.token, model_type="images", model_class="choices").send(
+        return Connector(self.token).send(
             method='GET',
+            url='videos/closed_questions',
             data=params)
 
     def find_id(self, image_id=None):
+
         """Get image by ID
 
         Args:
@@ -59,6 +60,9 @@ class Choice():
 
         """
 
-        return Connector(self.token, model_type="images", model_class="find").send(
+        return Connector(self.token).send(
             method='GET',
-            data={"id": image_id})
+            url='videos/closed_questions/' + image_id,
+            data=None)
+
+

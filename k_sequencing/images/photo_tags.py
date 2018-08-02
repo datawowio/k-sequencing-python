@@ -1,5 +1,6 @@
 from k_sequencing.connector import Connector
 
+
 class PhotoTag():
 
     def __init__(self, token):
@@ -21,10 +22,8 @@ class PhotoTag():
         Raises:
 
         """
-
-        return Connector(self.token).send(
+        return Connector(self.token, model_type="images", model_class="photo_tags").send(
             method='POST',
-            url='images/photo_tags',
             data=params)
 
     def list(self, params=None):
@@ -39,14 +38,11 @@ class PhotoTag():
         Raises:
 
         """
-
-        return Connector(self.token).send(
+        return Connector(self.token, model_type="images", model_class="photo_tags").send(
             method='GET',
-            url='images/photo_tags',
             data=params)
 
     def find_id(self, image_id=None):
-
         """Get image by ID
 
         Args:
@@ -58,8 +54,6 @@ class PhotoTag():
         Raises:
 
         """
-
-        return Connector(self.token).send(
+        return Connector(self.token, model_type="images", model_class="find").send(
             method='GET',
-            url='projects/images/' + image_id,
-            data=None)
+            data={"id": image_id})
