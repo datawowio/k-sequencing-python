@@ -1,5 +1,6 @@
 from k_sequencing.connector import Connector
 
+
 class Predictor():
 
     def __init__(self, token):
@@ -19,10 +20,8 @@ class Predictor():
         Raises:
 
         """
-
-        return Connector(self.token).send(
+        return Connector(self.token, model_type="ai", model_class="predictor").send(
             method='POST',
-            url='prime/predictions',
             data=params)
 
     def list(self, params=None):
@@ -38,9 +37,8 @@ class Predictor():
 
          """
 
-        return Connector(self.token).send(
+        return Connector(self.token, model_type="ai", model_class="predictor").send(
             method='GET',
-            url='prime/predictions',
             data=params)
 
     def find_id(self, image_id=None):
@@ -56,8 +54,6 @@ class Predictor():
         Raises:
 
         """
-
-        return Connector(self.token).send(
+        return Connector(self.token, model_type="ai", model_class="find").send(
             method='GET',
-            url='projects/images/' + image_id,
-            data=None)
+            doc_id=image_id)

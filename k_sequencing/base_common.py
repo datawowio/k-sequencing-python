@@ -13,10 +13,14 @@ def path(type_url, model):
             "find": "projects/images/"}
     }
 
-    return url[type_url][model]
+    lv1 = url.get(type_url, {})
+    final_path = lv1.get(model, "Not found")
+
+    return final_path
 
 
 def base_url(model):
     url = {"images": "http://localhost:3001/api/", "videos": "http://localhost:3001/api/",
            "texts": "http://localhost:3002/api/", "ai": "http://localhost:3001/api/"}
-    return url[model]
+
+    return url.get(model, 'Not found')

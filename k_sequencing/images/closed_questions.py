@@ -60,4 +60,4 @@ class ClosedQuestion():
 
         return Connector(self.token, model_type="images", model_class="find").send(
             method='POST',
-            data={"id": image_id})
+            doc_id=image_id)

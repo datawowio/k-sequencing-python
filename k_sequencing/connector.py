@@ -36,8 +36,11 @@ class Connector(object):
         path = base_config.path(model_type, model_class)
         base_url = base_config.base_url(model_type)
 
+        if path == 'Not found' or base_url == 'Not found':
+
+            raise AttributeError('Incorrect model type for getting URL')
+
         self.base_api = base_url + path
-        print(self.base_api);
 
     def _build_header(self, headers=None):
 
@@ -45,27 +48,36 @@ class Connector(object):
             headers = {}
 
         headers['Authorization'] = self.project_key
-        headers['Accept'] = 'application/json'
-        headers['Content-Type'] = 'application/x-www-form-urlencoded'
+        headers['Accept'] = headers.get('Accept', 'application/json')
+        headers['Content-Type'] = headers.get(
+            'Content-Type', 'application/x-www-form-urlencoded')
 
         return headers
 
-    def send(self, method='GET', data=None, headers=None):
-         url = self.base_api
+    def send(self, method='GET', data=None, query_str=False, doc_id=None):
+        url = self.base_api
+        builder = None
 
-        if data['id'] is not None:
-            url + url + data['id']
-            del data['id']
+        if doc_id is not None:
+            if query_str is False:
+                url = "%s/%s" % (url, doc_id)
+            else:
+                url = "%s?id=%s" % (url, doc_id)
 
         session = Session()
-        if headers is None:
-            headers = self.headers
+        if self.headers['Content-Type'] == 'application/json':
+            builder = Request(
+                method,
+                url,
+                json=data,
+                headers=self.headers)
 
-        builder = Request(
-            method,
-            url,
-            data=data,
-            headers=headers)
+        else:
+            builder = Request(
+                method,
+                url,
+                data=data,
+                headers=self.headers)
 
         prepare = session.prepare_request(builder)
 
