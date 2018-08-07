@@ -7,7 +7,7 @@ def path(type_url, model):
             "photo_tag": "images/photo_tags",
             "find": "projects/images/"},
         "videos": {"closed_questions": "videos/closed_questions"},
-        "texts": {"categories": "v1/text/text_categories"},
+        "texts": {"categories": "v1/text/text_categories", "conversations": "v1/text/text_closed_questions"},
         "ai": {
             "predictor": "prime/predictions",
             "find": "projects/images/"}
