@@ -7,9 +7,9 @@ from k_sequencing.images.photo_tags import PhotoTag
 from k_sequencing.videos.video_classify import VideoClassify
 
 from k_sequencing.texts.categories import CategoryClassify
-from k_sequencing.texts.conversations import ConversationClassify
+from k_sequencing.texts.text_closed_questions import TextClosedQuestion
 
 from k_sequencing.predictions.predictors import Predictor
 
 __all__ = ["Choice", "ClosedQuestion", "Message", "PhotoTag",
-           "VideoClassify", "CategoryClassify", "ConversationClassify", "Predictor"]
+           "VideoClassify", "CategoryClassify", "TextClosedQuestion", "Predictor"]
