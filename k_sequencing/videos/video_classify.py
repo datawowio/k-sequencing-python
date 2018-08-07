@@ -1,5 +1,6 @@
 from k_sequencing.connector import Connector
 
+
 class VideoClassify():
 
     def __init__(self, token):
@@ -22,9 +23,8 @@ class VideoClassify():
 
         """
 
-        return Connector(self.token).send(
+        return Connector(self.token, model_type="videos", model_class="closed_questions").send(
             method='POST',
-            url='videos/closed_questions',
             data=params)
 
     def list(self, params=None):
@@ -41,13 +41,11 @@ class VideoClassify():
 
          """
 
-        return Connector(self.token).send(
+        return Connector(self.token, model_type="videos", model_class="closed_questions").send(
             method='GET',
-            url='videos/closed_questions',
             data=params)
 
     def find_id(self, image_id=None):
-
         """Get image by ID
 
         Args:
@@ -60,9 +58,6 @@ class VideoClassify():
 
         """
 
-        return Connector(self.token).send(
+        return Connector(self.token, model_type="videos", model_class="closed_questions").send(
             method='GET',
-            url='videos/closed_questions/' + image_id,
-            data=None)
-
-
+            doc_id=image_id)
