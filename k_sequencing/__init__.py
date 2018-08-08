@@ -8,8 +8,9 @@ from k_sequencing.videos.video_classify import VideoClassify
 
 from k_sequencing.texts.categories import CategoryClassify
 from k_sequencing.texts.text_closed_questions import TextClosedQuestion
+from k_sequencing.texts.conversations import Conversation
 
 from k_sequencing.predictions.predictors import Predictor
 
 __all__ = ["Choice", "ClosedQuestion", "Message", "PhotoTag",
-           "VideoClassify", "CategoryClassify", "TextClosedQuestion", "Predictor"]
+           "VideoClassify", "CategoryClassify", "TextClosedQuestion", "Conversation", "Predictor"]

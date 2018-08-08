@@ -1,7 +1,7 @@
 from k_sequencing.connector import Connector
 
 
-class TextClosedQuestion():
+class Conversation():
 
     def __init__(self, token):
         self.token = token
@@ -20,7 +20,8 @@ class TextClosedQuestion():
         Raises:
 
         """
-        return Connector(self.token, model_type='texts', model_class='closed_questions').send(method='POST', data=params)
+        headers = {'Content-Type': 'application/json'}
+        return Connector(self.token, model_type='texts', model_class='conversations', headers=headers).send(method='POST', data=params)
 
     def list(self, params=None):
         """Get image choices
@@ -36,7 +37,7 @@ class TextClosedQuestion():
 
          """
 
-        return Connector(self.token, model_type='texts', model_class='closed_questions').send(method='GET', data=params)
+        return Connector(self.token, model_type='texts', model_class='conversations').send(method='GET', data=params)
 
     def find_id(self, text_id=None):
         """Get image by ID
@@ -53,6 +54,6 @@ class TextClosedQuestion():
 
         return Connector(self.token,
                          model_type='texts',
-                         model_class='closed_questions').send(method='GET',
+                         model_class='conversations').send(method='GET',
                                                         doc_id=text_id,
                                                         query_str=True)
