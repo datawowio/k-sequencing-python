@@ -7,19 +7,19 @@ class VideoClassify():
         self.token = token
 
     def create(self, params=None):
-        """Create new closed questions
+        """Create video closed question
 
         Args:
-            instruction (str): Detail about image.
-            data (str): URL of imagee
-            postback_url (str): URL for callback
-            postback_method (str): Config HTTP method GET POST PUT PATCH DELETE
-            custom_id (str): Custom ID
-            staff_id (int): assign to staff
+            data (str): URL of image
+            muted (bool): Mute viode on start (default: true)
+            allow_seeking (bool): Allow seeking video player
+            play_at (float): Setting video start time
+            postback_url (str): URL for callback once image has been checked
+            postback_method (str): Config HTTP method GET POST PUT PATCH
+            custom_id (str): Custom ID that used for search
 
         Returns:
-
-        Raises:
+            dict: The value containt in Response class as dict
 
         """
 
@@ -28,16 +28,14 @@ class VideoClassify():
             data=params)
 
     def list(self, params=None):
-        """Get image closed questions
+        """Retrive list of video closed question
 
         Args:
             page (int): Page of data
             per_page (int): Limit of date per page
 
         Returns:
-
-        Raises:
-
+           dict: The value containt in Response class as dict
 
          """
 
@@ -46,15 +44,14 @@ class VideoClassify():
             data=params)
 
     def find_id(self, image_id=None):
-        """Get image by ID
+        """Retrive video by ID or custom ID
 
         Args:
             id (int): ID of data
             custom_id (int): custom ID of data
 
         Returns:
-
-        Raises:
+           dict: The value containt in Response class as dict
 
         """
 

@@ -7,21 +7,19 @@ class Choice():
         self.token = token
 
     def create(self, params=None):
-        """Create new image choices
+        """Create image choices
 
         Args:
-            instruction (str): Detail about image.
-            categories (str): The list of choice. sparate by use space.
-            data (str): URL of imagee
-            postback_url (str): URL for callback
+            instruction (str): Tell moderator what answer you expected and what image is
+            categories (str): The list of choice that can be possible. sparate by use space
+            data (str): URL of image
+            postback_url (str): URL for callback once image has been checked
+            postback_method (str): Config HTTP method GET POST PUT PATCH
             multiple (bool): Config multiple select
-            postback_method (str): Config HTTP method GET POST PUT PATCH DELETE
-            custom_id (str): Custom ID
-            staff_id (int): assign to staff
+            custom_id (str): Custom ID that used for search
 
         Returns:
-
-        Raises:
+            dict: The value containt in Response class as dict
 
         """
         return Connector(self.token, model_type="images", model_class="choices").send(
@@ -29,16 +27,14 @@ class Choice():
             data=params)
 
     def list(self, params=None):
-        """Get image choices
+        """Retrive list of image choices
 
         Args:
             page (int): Page of data
             per_page (int): Limit of date per page
 
         Returns:
-
-        Raises:
-
+            dict: The value containt in Response class as dict
 
          """
 
@@ -47,15 +43,13 @@ class Choice():
             data=params)
 
     def find_id(self, image_id=None):
-        """Get image by ID
+        """Retrive image by ID or custom ID
 
         Args:
             id (int): ID of data
             custom_id (int): custom ID of data
 
         Returns:
-
-        Raises:
 
         """
 

@@ -7,17 +7,16 @@ class Predictor():
         self.token = token
 
     def create(self, params=None):
-        """Create new photo tags
+        """Create prediction data
 
         Args:
-            data (str): URL of imagee
-            postback_url (str): URL for callback
-            postback_method (str): Config HTTP method GET POST PUT PATCH DELETE
-            custom_id (str): Custom ID
+            data (str): URL of image
+            postback_url (str): URL for callback once image has been checked
+            postback_method (str): Config HTTP method GET POST PUT PATCH
+            custom_id (str): Custom ID that used for search
 
         Returns:
-
-        Raises:
+            dict: The value containt in Response class as dict
 
         """
         return Connector(self.token, model_type="ai", model_class="predictor").send(
@@ -25,15 +24,14 @@ class Predictor():
             data=params)
 
     def list(self, params=None):
-        """Get prediction
+        """Retrive list of prediction data
 
         Args:
             page (int): Page of data
             per_page (int): Limit of date per page
 
         Returns:
-
-        Raises:
+            dict: The value containt in Response class as dict
 
          """
 
@@ -42,16 +40,14 @@ class Predictor():
             data=params)
 
     def find_id(self, image_id=None):
-
-        """Get image by ID
+        """Retrive image by ID or custom ID
 
         Args:
             id (int): ID of data
             custom_id (int): custom ID of data
 
         Returns:
-
-        Raises:
+            dict: The value containt in Response class as dict
 
         """
         return Connector(self.token, model_type="ai", model_class="find").send(

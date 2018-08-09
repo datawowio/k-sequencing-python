@@ -5,12 +5,16 @@
 
 Welcome to k-sequencing's documentation!
 ========================================
+k-sequencing-python is a Python library for using DataWow API platform. 
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
 
+Getting help
+========================================
+If you have questions about our API, bug report or support, please contact support@datawow.io 
 
 Indices and tables
 ==================
