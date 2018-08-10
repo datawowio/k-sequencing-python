@@ -11,10 +11,13 @@ k-sequencing-python is a Python library for using DataWow API platform.
    :maxdepth: 2
    :caption: Contents:
 
+   source/modules.rst
+
 
 Getting help
 ========================================
 If you have questions about our API, bug report or support, please contact support@datawow.io 
+
 
 Indices and tables
 ==================

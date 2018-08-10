@@ -1,10 +1,7 @@
-images
-======
+k_sequencing
+============
 
 .. toctree::
    :maxdepth: 4
 
-   choices
-   closed_questions
-   messages
-   photo_tags
+   k_sequencing
