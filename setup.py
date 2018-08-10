@@ -7,13 +7,14 @@ except ImportError:
 
 setup(
     name='k-sequencing',
-    version='0.0.6rc',
+    version='0.1.0',
     description='k-sequencing client for python user',
     url='https://datawow.io',
     author='Datawow.io',
     author_email='info@datawow.io',
     license='MIT',
     packages=['k_sequencing'],
+    include_package_data=True,
     install_requires=['requests', 'mock >= 2.0.0'],
     test_suite='k_sequencing.test',
     classifiers=[
