@@ -1,3 +1,4 @@
+
 # k-sequencing-python
 k-sequencing-python is rest library for python version. 
 ###### support or question support@datawow.io
@@ -14,6 +15,10 @@ pip2 install k-sequencing
 Python supports the following Python versions:
 
 * Python 2.7
+* Python 3.5 tested 
+
+
+For  **conda** we don't contribute yet
 
 
 # Usage
@@ -21,8 +26,72 @@ Python supports the following Python versions:
 
 ## Import 
 ```python
->>> import k_sequencing
+>>> import k_sequencing as ks
 ```
+ There are 4 modules for API that you can specific the module as your expected 
+ 
+1. Image API module
+```python
+>>> import k_sequencing.images as ks
+``` 
+2. Text API module
+```python
+>>> import k_sequencing.texts as ks
+``` 
+
+3. Video API module
+```python
+>>> import k_sequencing.videos as ks
+``` 
+
+4. AI/Prediction API module
+```python
+>>> import k_sequencing.predictions as ks
+``` 
+
+
+## Functions explanation 
+### `k_sequencing.images` module
+In the image module, we have 4 APIs
+
+```python
+>>> ks.Choice()
+>>> ks.Message()
+>>> ks.PhotoTag()
+>>> ks.ClosedQuestion()
+``` 
+---
+### `k_sequencing.videos` module
+In the image module, we have 1 APIs
+
+```python
+>>> ks.VideoClassify()
+``` 
+---
+### `k_sequencing.texts` module
+In the image module, we have 3 APIs
+
+```python
+>>> ks.CategoryClassify()
+>>> ks.Conversation()
+>>> ks.ClosedQuestion()
+``` 
+---
+### `k_sequencing.predictions` module
+In the image module, we have 1 APIs
+
+```python
+>>> ks.Predictor()
+``` 
+
+
+---
+---
+---
+
+
+
+
 
 ## Choices
 [Yes or No Question from Image]
