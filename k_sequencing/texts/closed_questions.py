@@ -1,7 +1,7 @@
 from k_sequencing.connector import Connector
 
 
-class TextClosedQuestion():
+class ClosedQuestion():
 
     def __init__(self, token):
         self.token = token
