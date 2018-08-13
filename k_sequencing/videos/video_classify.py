@@ -28,7 +28,7 @@ class VideoClassify():
             data=params)
 
     def list(self, params=None):
-        """Retrive list of video closed question
+        """Retrieve list of video closed question
 
         Args:
             page (int): Page of data
@@ -44,7 +44,7 @@ class VideoClassify():
             data=params)
 
     def find_id(self, image_id=None):
-        """Retrive video by ID or custom ID
+        """Retrieve video by ID or custom ID
 
         Args:
             id (int): ID of data

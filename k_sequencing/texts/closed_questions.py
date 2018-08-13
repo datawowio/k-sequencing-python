@@ -23,7 +23,7 @@ class ClosedQuestion():
         return Connector(self.token, model_type='texts', model_class='closed_questions').send(method='POST', data=params)
 
     def list(self, params=None):
-        """Retrive list of text
+        """Retrieve list of text
 
         Args:
             page (int): Page of data
@@ -37,7 +37,7 @@ class ClosedQuestion():
         return Connector(self.token, model_type='texts', model_class='closed_questions').send(method='GET', data=params)
 
     def find_id(self, text_id=None):
-        """Retrive text by ID or custom ID
+        """Retrieve text by ID or custom ID
 
         Args:
             id (int): ID of data

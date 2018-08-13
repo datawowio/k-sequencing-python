@@ -25,7 +25,7 @@ class CategoryClassify():
         return Connector(self.token, model_type='texts', model_class='categories', headers=headers).send(method='POST', data=params)
 
     def list(self, params=None):
-        """Retrive list of conversation
+        """Retrieve list of conversation
 
         Args:
             page (int): Page of data
@@ -39,7 +39,7 @@ class CategoryClassify():
         return Connector(self.token, model_type='texts', model_class='categories').send(method='GET', data=params)
 
     def find_id(self, text_id=None):
-        """Retrive conversation by ID or custom ID
+        """Retrieve conversation by ID or custom ID
 
         Args:
             id (int): ID of data

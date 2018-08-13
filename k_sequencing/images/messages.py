@@ -25,7 +25,7 @@ class Message():
             data=params)
 
     def list(self, params=None):
-        """Retrive list of image messages
+        """Retrieve list of image messages
 
         Args:
             page (int): Page of data
@@ -41,7 +41,7 @@ class Message():
             data=params)
 
     def find_id(self, image_id=None):
-        """Retrive image by ID or custom ID
+        """Retrieve image by ID or custom ID
 
         Args:
             id (int): ID of data
