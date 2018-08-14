@@ -11,7 +11,7 @@ class ClosedQuestion():
 
         Args:
             data (str): URL of image
-            postback_url (str): URL for callback once image has been checked
+            postback_url (str): URL for answer callback once image has been checked
             postback_method (str): Configuration HTTP method GET POST PUT PATCH
             custom_id (str): Custom ID that used for search
 

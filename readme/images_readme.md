@@ -230,7 +230,7 @@ Description: Message Question from Image
 | ------------- |:-------------:| :-----:| :-----|
 | instruction	     | string      |   **Yes** | Tell moderator what answer you expected and what image is|
 | data     | 	string | **Yes** |URL of image|
-| postback_url	     | string      | No | URL for callback once image has been checked|
+| postback_url	     | string      | No | URL for answer callback once image has been checked|
 | postback_method     | 	string | No |Configuration HTTP method GET POST PUT PATCH|
 | custom_id	     | string      |   No |Custom ID that used for search|
 
@@ -335,7 +335,7 @@ Description: Tag an object in the image
 | ------------- |:-------------:| :-----:| :-----|
 |instruction| string|**Yes** |Tell moderator what answer you expected and what image is|
 |data|string| **Yes** |URL of image|
-|postback_url|string| No |URL for callback once image has been checked|
+|postback_url|string| No |URL for answer callback once image has been checked|
 |postback_method|string | No |Configuration HTTP method GET POST PUT PATCH|
 |custom_id|string|No|Custom ID that used for search|
 
