@@ -1,4 +1,3 @@
-
 # k-sequencing-python
 k-sequencing-python is rest library for python version. 
 ###### support or question support@datawow.io
