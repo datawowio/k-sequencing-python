@@ -10,12 +10,12 @@ class VideoClassify():
         """Create video closed question
 
         Args:
-            data (str): URL of image
-            muted (bool): Mute viode on start (default: true)
+            data (str): URL of video
+            muted (bool): Mute video on start (default: true)
             allow_seeking (bool): Allow seeking video player
             play_at (float): Setting video start time
-            postback_url (str): URL for callback once image has been checked
-            postback_method (str): Config HTTP method GET POST PUT PATCH
+            postback_url (str): URL for callback once video has been checked
+            postback_method (str): Configuration HTTP method GET POST PUT PATCH
             custom_id (str): Custom ID that used for search
 
         Returns:
@@ -43,7 +43,7 @@ class VideoClassify():
             method='GET',
             data=params)
 
-    def find_id(self, image_id=None):
+    def find_id(self, video_id=None):
         """Retrieve video by ID or custom ID
 
         Args:
@@ -57,4 +57,4 @@ class VideoClassify():
 
         return Connector(self.token, model_type="videos", model_class="closed_questions").send(
             method='GET',
-            doc_id=image_id)
+            doc_id=video_id)
