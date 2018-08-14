@@ -1,4 +1,3 @@
-
 # k-sequencing-python
 k-sequencing-python is rest library for python version. 
 ###### support or question support@datawow.io
@@ -64,14 +63,14 @@ In the image module, we have 4 APIs
 ``` 
 ---
 ### `k_sequencing.videos` module
-In the image module, we have 1 APIs
+In the video module, we have 1 APIs
 
 ```python
 >>> ks.VideoClassify()
 ``` 
 ---
 ### `k_sequencing.texts` module
-In the image module, we have 3 APIs
+In the text module, we have 3 APIs
 
 ```python
 >>> ks.CategoryClassify()
@@ -80,7 +79,7 @@ In the image module, we have 3 APIs
 ``` 
 ---
 ### `k_sequencing.predictions` module
-In the image module, we have 1 APIs
+In the prediction module, we have 1 APIs
 
 ```python
 >>> ks.Predictor()
@@ -96,16 +95,8 @@ Description: Yes or No Question from Image
 
 ### Create
 ```python
->>> """ To import 
 >>> from k_sequencing.images import Choice as choice
->>>  or
->>> import k_sequencing.images as image
->>> """
->>> """ To use function
->>> result = image.Choice('PROJECT KEY').create(params=param)
->>> or
 >>> result = choice('PROJECT KEY').create(params=param)
->>> """
 ```
 #### params 
 
@@ -145,20 +136,17 @@ print(result.data)
 
 ### Retrieve list of Image choices
 
-You can retrieve data by use same object of connector that you have been created with you project key
-
 ```python
->>> """ let say your were imported """
->>> """ from k_sequencing.images import Choice as choice """
+>>> from k_sequencing.images import Choice as choice
 >>> result = choice('PROJECT KEY').list()
 ```
-##### params
+#### params
 | Field        | Type           | Required  | Description |
 | ------------- |:-------------:| :-----:| :-----|
-| page     | 	interger | No | default 0|
+| page     | 	integer | No | default 0|
 | per_page 	     | string      | No | default 20 |
 
-##### response
+#### response
 ```python
  print(result.data)
  
@@ -186,8 +174,7 @@ You can retrieve data by use same object of connector that you have been created
 ### Retrieve data by ID of image
 
 ```python
->>> """ let say your were imported"""
->>> """ from k_sequencing.images import Choice as choice """
+>>> from k_sequencing.images import Choice as choice
 >>> result = choice("PROJECT KEY").find_id("YOUR IMAGE ID")
 ```
 ##### params
@@ -218,21 +205,13 @@ You can retrieve data by use same object of connector that you have been created
  """
 ```
 
-## Closed questions
-[Standard Criteria]
+#### Closed Question class
+Description: Standard Criteria
 
 ### Create
 ```python
->>> """ To import 
 >>> from k_sequencing.images import ClosedQuestion as closed
->>>  or
->>> import k_sequencing.images as image
->>> """
->>> """ To use function
->>> result = image.Choice('PROJECT KEY').create(params=param)
->>> or
 >>> result = closed('PROJECT KEY').create(params=param)
->>> """
 ```
 #### params
 | Field        | Type           | Required  | Description |
@@ -258,23 +237,20 @@ You can retrieve data by use same object of connector that you have been created
   'project_id': 140,
   'staff_id': None,
   'status': 'unprocess'
- }
+}
  """
 ```
 
 ### Retrieve list of data
 
-You can retrieve data by use same object of connector that you have been created with you project key
-
 ```python 
->>> """ let say your were imported """
->>> """ from k_sequencing.images import ClosedQuestion as closed """
+>>> from k_sequencing.images import ClosedQuestion as closed
 >>> result = closed('PROJECT KEY').list()
 ```
 ##### params
 | Field        | Type           | Required  | Description |
 | ------------- |:-------------:| :-----:| :-----|
-| page     | 	interger | No | default 0|
+| page     | 	integer | No | default 0|
 | per_page 	     | string      | No | default 20 |
 
 ```python
@@ -301,15 +277,13 @@ print(result.data)
 ### Retrieve data by ID of image
 
 ```python
->>> """ let say your were imported"""
->>> """ from k_sequencing.images import ClosedQuestion as closed """
+>>> from k_sequencing.images import ClosedQuestion as closed
 >>> result = closed("PROJECT KEY").find_id("YOUR IMAGE ID")
 ```
 ##### params
 | Field        | Type           | Required  | Description |
 | ------------- |:-------------:| :----:| :-----|
-| id	     | string      |   No | Image id|
-| custom_id | string     |    No | Client's image id |
+| image_id	     | string  |   **Yes** | Image's ID or custom ID which is you were assigned|
 
 ##### response
 ```python
@@ -330,89 +304,84 @@ print(result.data)
 ```
 
 
-
 ## Image messages
-[Message Question from Image]
+Description: Message Question from Image
 
 ### Create
 ```python
->>> param = {'instruction': 'face', 'data': 'URL_IMAGE'}
->>> ks = k_sequencing
->>> result = ks.Message("PROJECT KEY").create(params=param)
+>>> from k_sequencing.images import Message as message
+>>> result = message("PROJECT KEY").create(params=param)
 ```
 
 ##### params
 | Field        | Type           | Required  | Description |
 | ------------- |:-------------:| :-----:| :-----|
-| instruction	     | string      |   Yes | Image instruction|
-| data     | 	string | Yes |Data for attachment|
-| postback_url	     | string      | No | Image postback url|
-| postback_method     | 	string | No |Postback method|
-| custom_id	     | string      |   No |Custom's id|
+| instruction	     | string      |   **Yes** | Tell moderator what answer you expected and what image is|
+| data     | 	string | **Yes** |URL of image|
+| postback_url	     | string      | No | URL for callback once image has been checked|
+| postback_method     | 	string | No |Configuration HTTP method GET POST PUT PATCH|
+| custom_id	     | string      |   No |Custom ID that used for search|
 
 ##### response 
-```
-{ 'code': 200,
-  'data': { u'answer': None,
-            u'credit_charged': 0,
-            u'custom_id': None,
-            u'data': u'[image URL]',
-            u'id': u'5a56d8f660f4f17a353d3121',
-            u'instruction': u'face',
-            u'postback_url': u'[your callback URL]',
-            u'processed_at': None,
-            u'project_id': 84,
-            u'status': u'unprocess'},
-  'error_code': None,
-  'message': u'success',
-  'meta': { u'code': 200, u'message': u'success'}}
+```python 
+print(result.date)
+
+"""
+{
+  'answer': None,
+  'credit_charged': 0,
+  'custom_id': None,
+  'data': 'Image URL',
+  'id': '5b7270c25a5e431052f990f4',
+  'instruction': 'face',
+  'postback_url': 'http://localhost:3000/callbacks',
+  'processed_at': None,
+  'project_id': 141,
+  'status': 'unprocess'
+}
+"""
 ```
 
 ### Retrieve list of Image messages
 
-You can retrieve data by use same object of connector that you have been created with you project key
-
 ```python 
->>> ks = k_sequencing
->>> result = ks.Message("PROJECT KEY").list()
+>>> from k_sequencing.images import Message as message
+>>> result = message("PROJECT KEY").list()
 ```
 ##### params
 | Field        | Type           | Required  | Description |
 | ------------- |:-------------:| :-----:| :-----|
-| page     | 	interger | No | default 0|
+| page     | 	integer | No | default 0|
 | per_page 	     | string      | No | default 20 |
 
 ##### response 
-```
-{ 'code': 200,
-  'data': { u'images': [ { u'answer': None,
-                           u'credit_charged': 0,
-                           u'custom_id': None,
-                           u'data': u'[image URL]',
-                           u'id': u'5a56d8f660f4f17a353d3121',
-                           u'instruction': u'face',
-                           u'postback_url': u'[your callback URL]',
-                           u'processed_at': None,
-                           u'project_id': 84,
-                           u'status': u'unprocess'},
-                           {...},
-                           {...}]},
-  'error_code': None,
-  'message': u'success',
-  'meta': { u'code': 200,
-            u'current_page': 1,
-            u'message': u'success',
-            u'next_page': -1,
-            u'prev_page': -1,
-            u'total_count': 3,
-            u'total_pages': 1}}
+```python
+print(result.data)
+
+"""
+{
+  'images': [{'answer': None,
+  'credit_charged': 0,
+  'custom_id': None,
+  'data': 'Image URL',
+  'id': '5b7270c25a5e431052f990f4',
+  'instruction': 'face',
+  'postback_url': 'http://localhost:3000/callbacks',
+  'processed_at': None,
+  'project_id': 141,
+  'status': 'unprocess'},
+  {...}, 
+  {...}]
+}
+"""
+
 ```
 
 ### Retrieve data by ID of image
 
 ```python
->>> ks = k_sequencing
->>> result = ks.Message("PROJECT KEY").find_id("YOUR IMAGE ID")
+>>> from k_sequencing.images import Message as message
+>>> result = message("PROJECT KEY").find_id("YOUR IMAGE ID")
 ```
 ##### params
 | Field        | Type           | Required  | Description |
@@ -421,21 +390,23 @@ You can retrieve data by use same object of connector that you have been created
 |custom_id | string     |    No | Client's image id |
 
 ##### response 
-```
-{ 'code': 200,
-  'data': { u'image': { u'answer': None,
-                        u'credit_charged': 0,
-                        u'custom_id': None,
-                        u'data': u'[image URL]',
-                        u'id': u'5a56d8f660f4f17a353d3121',
-                        u'instruction': u'face',
-                        u'postback_url': u'[your URL]',
-                        u'processed_at': None,
-                        u'project_id': 84,
-                        u'status': u'unprocess'}},
-  'error_code': None,
-  'message': u'success',
-  'meta': { u'code': 200, u'message': u'success'}}
+```python
+print(result.data)
+
+"""
+{
+  'image': {'answer': None,
+  'credit_charged': 0,
+  'custom_id': None,
+  'data': 'Image URL',
+  'id': '5b7270c25a5e431052f990f4',
+  'instruction': 'face',
+  'postback_url': 'http://localhost:3000/callbacks',
+  'processed_at': None,
+  'project_id': 141,
+  'status': 'unprocess'}
+}
+"""
 ```
 
 
