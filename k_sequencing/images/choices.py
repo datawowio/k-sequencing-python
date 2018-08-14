@@ -11,11 +11,12 @@ class Choice():
 
         Args:
             instruction (str): Tell moderator what answer you expected and what image is
-            categories (str): The list of choice that can be possible. sparate by use space
+            categories (str): List of answers that you were expected. sparate by use space
             data (str): URL of image
-            postback_url (str): URL for callback once image has been checked
-            postback_method (str): Config HTTP method GET POST PUT PATCH
-            multiple (bool): Config multiple select
+            postback_url (str): URL for answer callback once image has been checked
+            postback_method (str): Configuration HTTP method GET POST PUT PATCH
+            multiple (bool): Configuration for multiple selection of category to answer
+            allow_empty (bool): Allow answer can be blank
             custom_id (str): Custom ID that used for search
 
         Returns:

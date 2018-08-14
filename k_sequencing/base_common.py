@@ -4,7 +4,7 @@ def path(type_url, model):
             "closed_questions": "images/closed_questions",
             "messages": "images/messages",
             "choices": "images/choices",
-            "photo_tag": "images/photo_tags",
+            "photo_tags": "images/photo_tags",
             "find": "projects/images/"},
         "videos": {"closed_questions": "videos/closed_questions"},
         "texts": {
