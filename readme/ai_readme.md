@@ -2,12 +2,12 @@
 
 
 # Table of Content
-[How to use it](#create)
+- [How to use it](#create)
 ## [Type of AI](#response-of-each-type-ai)
-[Standard Criteria](#standard-criteria)
-[Nudity/Sexual](#nuditysexual)
-[Demographic](#demographic)
-[Standard Criteria & Human](#standard-criteria--human)
+- [Standard Criteria](#standard-criteria)
+- [Nudity/Sexual](#nuditysexual)
+- [Demographic](#demographic)
+- [Standard Criteria & Human](#standard-criteria--human)
 
 ## Images (AI Beta)
 

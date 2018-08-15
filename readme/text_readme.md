@@ -1,9 +1,9 @@
 ### `datawow.texts` modules
 
 # Table of Content
-[Category class](#category-class)
-[Closed Question class](#closed-question-class)
-[Conversation class](#conversation-class)
+- [Category class](#category-class)
+- [Closed Question class](#closed-question-class)
+- [Conversation class](#conversation-class)
 
 ## Category class
 Description: Classify type in many level of category type

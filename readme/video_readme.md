@@ -1,7 +1,7 @@
 ###  `k_sequencing.videos` modules
 
 Table of Content
-[Video classify class](#video-classify-class)
+- [Video classify class](#video-classify-class)
 
 ## Video classify class
 Description: Video classification

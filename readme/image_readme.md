@@ -2,10 +2,10 @@
 
 # Table of Content
 
-[Choice class](#choice-class)
-[Closed Question class](#closed-question-class)
-[Image message class](#image-messages-class)
-[Photo tags class](#photo-tags-class)
+- [Choice class](#choice-class)
+- [Closed Question class](#closed-question-class)
+- [Image message class](#image-messages-class)
+- [Photo tags class](#photo-tags-class)
 
 ---
 ## Choice class
