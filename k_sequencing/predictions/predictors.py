@@ -43,8 +43,7 @@ class Predictor():
         """Retrieve image by ID or custom ID
 
         Args:
-            id (int): ID of data
-            custom_id (int): custom ID of data
+            image_id (int): Text's ID or custom ID which is you were assigned
 
         Returns:
             dict: The value containt in Response class as dict

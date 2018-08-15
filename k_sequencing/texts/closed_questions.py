@@ -10,9 +10,9 @@ class ClosedQuestion():
         """Create text closed question
 
         Args:
-            data (str): URL of imagee
+            data (arr of str): Stream of text to moderate
             postback_url (str): URL for callback
-            postback_method (str): Config HTTP method GET POST PUT PATCH DELETE
+            postback_method (str): Configuration HTTP method GET POST PUT PATCH
             custom_id (str): Custom ID
 
         Returns:
@@ -40,10 +40,9 @@ class ClosedQuestion():
         """Retrieve text by ID or custom ID
 
         Args:
-            id (int): ID of data
-            custom_id (int): custom ID of data
+            text_id (int): Text's ID or custom ID which is you were assigned
 
-        Returns:
+       Returns:
             dict: The value containt in Response class as dict
 
         """

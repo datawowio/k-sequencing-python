@@ -10,8 +10,8 @@ class Conversation():
         """Create conversation data
 
         Args:
-            conversation (arr): array of conversation
-            custom_conversation_ids (arr): ID or custom ID for each conversation
+            conversation (arr of str): Example: [{ 'name': '...', 'message': '...' }]
+            custom_conversation_ids (arr of str): ID or custom ID for each conversation. Example: ['1','2']
             postback_url (str): URL for callback
             postback_method (str): Config HTTP method GET POST PUT PATCH DELETE
             custom_id (str): Custom ID
@@ -43,8 +43,7 @@ class Conversation():
         """Retrieve conversation by ID or custom ID
 
          Args:
-             id (int): ID of data
-             custom_id (int): custom ID of data
+             text_id (int): Text's ID or custom ID which is you were assigned
 
          Returns:
              dict: The value containt in Response class as dict

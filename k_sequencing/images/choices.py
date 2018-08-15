@@ -47,8 +47,7 @@ class Choice():
         """Retrieve image by ID or custom ID
 
         Args:
-            id (int): ID of data
-            custom_id (int): custom ID of data
+            image_id (int): Image's ID or custom ID which is you were assigned
 
         Returns:
 

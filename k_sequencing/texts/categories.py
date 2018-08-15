@@ -13,9 +13,9 @@ class CategoryClassify():
             conversation (arr of dict): Example: { "name": "username or indicator as you wish", "message": "message use to classify" }
             title (str): Title of conversation
             postback_url (str): URL for callback
-            postback_method (str): Config HTTP method GET POST PUT PATCH DELETE
-            custom_id (str): Custom ID
-            allow_empty (bool) : Answer can be null
+            postback_method (str): Configuration HTTP method GET POST PUT PATCH
+            custom_id (str): Custom ID that used for search
+            allow_empty (bool) : Answer can be empty
 
         Returns:
             dict: The value containt in Response class as dict
@@ -42,8 +42,7 @@ class CategoryClassify():
         """Retrieve conversation by ID or custom ID
 
         Args:
-            id (int): ID of data
-            custom_id (int): custom ID of data
+            text_id (int): Text's ID or custom ID which is you were assigned
 
         Returns:
             dict: The value containt in Response class as dict
