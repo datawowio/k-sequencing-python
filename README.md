@@ -86,9 +86,9 @@ In the prediction module, we have 1 APIs
 ``` 
 
 # Demo and Usage
- - Image Documentation [link](readme/images_readme.md)
- - Video Documentation [link](readme/videos_readme.md)
- - Text Documentation [link](readme/texts_readme.md)
+ - Image Documentation [link](readme/image_readme.md)
+ - Video Documentation [link](readme/video_readme.md)
+ - Text Documentation [link](readme/text_readme.md)
  - AI/Prediction Documentation [link](readme/ai_readme.md)
 
 
