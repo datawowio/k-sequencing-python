@@ -1,5 +1,13 @@
 ### `k_sequencing.images` modules
 
+# Table of Content
+
+[Choice class](#choice-class)
+[Closed Question class](#closed-question-class)
+[Image message class](#image-messages-class)
+[Photo tags class](#photo-tags-class)
+
+---
 ## Choice class
 Description: Yes or No Question from Image
 
@@ -216,7 +224,7 @@ print(result.data)
 ```
 
 
-## Image messages
+## Image messages class
 Description: Message Question from Image
 
 ### Create
@@ -321,7 +329,7 @@ print(result.data)
 ```
 
 
-## Photo tags
+## Photo tags class
 Description: Tag an object in the image
 
 ### Create
